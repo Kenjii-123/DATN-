@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{5063D4FF-1A51-1285-421D-A02423255F80}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerHealth.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="31" Column="1" />
+      <File FileName="Assets/Scripts/Enemy2Health.cs" />
+      <File FileName="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" />
+      <File FileName="Assets/Scripts/ShurikenTrap.cs" />
+      <File FileName="Assets/Scripts/Slaser.cs" />
+      <File FileName="Assets/Scripts/Trap.cs" />
+      <File FileName="Assets/Scripts/Trapp.cs" />
+      <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
+      <File FileName="Assets/Scripts/CheckPoint.cs" />
+      <File FileName="Assets/Scripts/Enemy2Controller.cs" />
+      <File FileName="Assets/Scripts/FallTrap.cs" />
+      <File FileName="Assets/Scripts/DTrap.cs" />
+      <File FileName="Assets/Scripts/QuestionPanel.cs" />
+      <File FileName="Library/PackageCache/com.unity.2d.animation@9.0.3/package.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="đồ án tốt" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8db1edb6-0cdf-437d-ab82-65b48f7f2da8" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
