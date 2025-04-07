@@ -8,6 +8,7 @@ TagManager:
   - trap
   - En
   - djump
+  - DashItem
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 'Trap '
   - 'Enemy '
   - djump
-  - 
+  - DashItem
   - 
   - 
   - 

@@ -1954,3 +1954,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4204.186175 seconds.
+  path: Assets/Prefabs/DashItem .prefab
+  artifactKey: Guid(e4c05f7f431f24374831bf6610f5f0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DashItem .prefab using Guid(e4c05f7f431f24374831bf6610f5f0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be9365715a0ec9116d0a8db0cf304da') in 0.053860 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 42
