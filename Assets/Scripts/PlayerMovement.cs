@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private bool isGrounded;
-    private bool canDoubleJump;
+    private bool canDoubleJump = false;
 
     void Start()
     {
@@ -46,14 +46,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            canDoubleJump = true;
+            canDoubleJump = false;
         }
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
-            canDoubleJump = true;
         }
         else if (!isGrounded && canDoubleJump && Input.GetButtonDown("Jump"))
         {
