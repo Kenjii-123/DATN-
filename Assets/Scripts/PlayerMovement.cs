@@ -7,15 +7,19 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
-    public Transform attackPoint; 
-    public float attackRange = 0.5f; 
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
     public int attackDamage = 20;
-    public LayerMask enemyLayer; 
+    public LayerMask enemyLayer;
+
+    public GameObject doubleJumpSmokePrefab;
+    public Transform smokeSpawnPoint;
 
     private Animator animator;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private bool isGrounded;
+    private bool canDoubleJump;
 
     void Start()
     {
@@ -40,9 +44,27 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-12, 12, 1);
         }
 
+        if (isGrounded)
+        {
+            canDoubleJump = true;
+        }
+
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            animator.SetBool("isJumping", true);
+            canDoubleJump = true;
+        }
+        else if (!isGrounded && canDoubleJump && Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            animator.SetTrigger("doubleJumpTrigger");
+            canDoubleJump = false;
+
+            if (doubleJumpSmokePrefab != null && smokeSpawnPoint != null)
+            {
+                Instantiate(doubleJumpSmokePrefab, smokeSpawnPoint.position, Quaternion.identity);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -51,6 +73,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimation();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("djump"))
+        {
+            canDoubleJump = true;
+        }
     }
 
     void Attack()
