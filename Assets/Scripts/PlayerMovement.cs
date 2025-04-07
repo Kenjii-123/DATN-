@@ -14,6 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject doubleJumpSmokePrefab;
     public Transform smokeSpawnPoint;
+    public GameObject speedBoostEffectPrefab; // Prefab hiệu ứng tăng tốc
+    public Transform speedBoostEffectSpawnPoint; // Điểm tạo hiệu ứng tăng tốc
+
+    private bool canDash = false;
+    private bool isDashing = false;
+    public float dashSpeedMultiplier = 2f;
+    public float dashDuration = 3f;
+    private float dashTimer;
+    private float normalMoveSpeed;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -26,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        normalMoveSpeed = moveSpeed;
     }
 
     void Update()
@@ -33,6 +43,30 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+
+        if (isDashing)
+        {
+            movement.x *= dashSpeedMultiplier;
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                isDashing = false;
+                moveSpeed = normalMoveSpeed;
+                // Hủy hiệu ứng tăng tốc khi hết thời gian
+                if (speedBoostEffectPrefab != null && speedBoostEffectSpawnPoint != null)
+                {
+                    foreach (Transform child in speedBoostEffectSpawnPoint)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                }
+            }
+        }
+        else
+        {
+            moveSpeed = normalMoveSpeed;
+        }
+
         rb.velocity = movement;
 
         if (horizontalInput > 0)
@@ -71,6 +105,17 @@ public class PlayerMovement : MonoBehaviour
             Attack();
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && !isDashing)
+        {
+            isDashing = true;
+            dashTimer = dashDuration;
+            // Tạo hiệu ứng tăng tốc khi bắt đầu dash
+            if (speedBoostEffectPrefab != null && speedBoostEffectSpawnPoint != null)
+            {
+                Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
+            }
+        }
+
         UpdateAnimation();
     }
 
@@ -79,6 +124,19 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("djump"))
         {
             canDoubleJump = true;
+        }
+        if (other.CompareTag("DashItem") && !isDashing)
+        {
+            canDash = true;
+            isDashing = true;
+            dashTimer = dashDuration;
+            normalMoveSpeed = moveSpeed;
+            // Tạo hiệu ứng tăng tốc khi thu thập vật phẩm và bắt đầu dash
+            if (speedBoostEffectPrefab != null && speedBoostEffectSpawnPoint != null)
+            {
+                Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
+            }
+            Destroy(other.gameObject);
         }
     }
 
