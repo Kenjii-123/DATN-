@@ -9,6 +9,7 @@ TagManager:
   - En
   - djump
   - DashItem
+  - 'Enemy '
   layers:
   - Default
   - TransparentFX
