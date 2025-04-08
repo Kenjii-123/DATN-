@@ -72,6 +72,7 @@
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/FallTrap.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
+    <Compile Include="Assets/Thacnuoc.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/ShurikenTrap.cs" />
   </ItemGroup>
