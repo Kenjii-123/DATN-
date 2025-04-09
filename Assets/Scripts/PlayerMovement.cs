@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 isDashing = false;
                 moveSpeed = normalMoveSpeed;
-                // Hủy hiệu ứng tăng tốc khi hết thời gian
+               
                 if (speedBoostEffectPrefab != null && speedBoostEffectSpawnPoint != null)
                 {
                     foreach (Transform child in speedBoostEffectSpawnPoint)
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isDashing = true;
             dashTimer = dashDuration;
-            // Tạo hiệu ứng tăng tốc khi bắt đầu dash
+         
             if (speedBoostEffectPrefab != null && speedBoostEffectSpawnPoint != null)
             {
                 Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
             isDashing = true;
             dashTimer = dashDuration;
             normalMoveSpeed = moveSpeed;
-            // Tạo hiệu ứng tăng tốc khi thu thập vật phẩm và bắt đầu dash
+            
             if (speedBoostEffectPrefab != null && speedBoostEffectSpawnPoint != null)
             {
                 Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
