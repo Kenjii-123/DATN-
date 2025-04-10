@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/Scripts/PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Bullet.cs">
     <Files>
       <File FileName="Assets/PlayerSkills.cs" Line="1" Column="1" />
       <File FileName="Assets/LightningPowerUp.cs" />
       <File FileName="Assets/LightningStrike.cs" />
-      <File FileName="Assets/Player/Scripts/PlayerHealth.cs" Line="91" Column="2" />
-      <File FileName="Assets/Player/Scripts/Enemy2Health.cs" Line="1" Column="1" />
+      <File FileName="Assets/Player/Scripts/PlayerHealth.cs" Line="10" Column="56" />
+      <File FileName="Assets/Player/Scripts/Enemy2Health.cs" />
+      <File FileName="Assets/Player/Scripts/PlayerMovement.cs" Line="208" Column="2" />
+      <File FileName="Assets/Bullet.cs" Line="8" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,10 +15,9 @@
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Player" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="PlayerHealth.cs" selected="True" />
-                </Node>
+                <Node name="Scripts" expanded="True" />
               </Node>
+              <Node name="Bullet.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -25,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c18902f0-725c-4962-a740-39cb3d79d61d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e78c4ac6-be96-49e5-9f34-21c5ae11d028" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -76,6 +76,7 @@
     <Compile Include="Assets/LightningPowerUp.cs" />
     <Compile Include="Assets/Player/Scripts/Trap.cs" />
     <Compile Include="Assets/Player/Scripts/Dabay.cs" />
+    <Compile Include="Assets/Bullet.cs" />
     <Compile Include="Assets/Player/Scripts/BossController.cs" />
     <Compile Include="Assets/Player/Scripts/CheckPoint.cs" />
     <Compile Include="Assets/Player/Scripts/Slaser.cs" />
