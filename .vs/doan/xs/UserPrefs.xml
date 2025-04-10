@@ -1,28 +1,22 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LightningStrike.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/Scripts/PlayerHealth.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy2Controller.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="137" Column="124" />
-      <File FileName="Assets/Scripts/Trap.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Trapp.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/VerticalLazeTrap.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Slaser.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DTrap.cs" Line="24" Column="2" />
-      <File FileName="Assets/Thacnuoc.cs" Line="24" Column="2" />
-      <File FileName="Assets/Dabay.cs" Line="74" Column="2" />
-      <File FileName="Assets/Scripts/ShurikenTrap.cs" Line="10" Column="28" />
-      <File FileName="Assets/Scripts/Enemy2Health.cs" Line="16" Column="39" />
-      <File FileName="Assets/PlayerSkills.cs" Line="38" Column="2" />
-      <File FileName="Assets/LightningPowerUp.cs" Line="21" Column="2" />
-      <File FileName="Assets/LightningStrike.cs" Line="52" Column="2" />
+      <File FileName="Assets/PlayerSkills.cs" Line="1" Column="1" />
+      <File FileName="Assets/LightningPowerUp.cs" />
+      <File FileName="Assets/LightningStrike.cs" />
+      <File FileName="Assets/Player/Scripts/PlayerHealth.cs" Line="91" Column="2" />
+      <File FileName="Assets/Player/Scripts/Enemy2Health.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="LightningStrike.cs" selected="True" />
+              <Node name="Player" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="PlayerHealth.cs" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
@@ -31,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="80cb97e7-88cd-4597-abbf-3888d9cdedcf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c18902f0-725c-4962-a740-39cb3d79d61d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

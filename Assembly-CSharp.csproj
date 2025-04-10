@@ -58,27 +58,27 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.0f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/BossController.cs" />
-    <Compile Include="Assets/Scripts/Slaser.cs" />
-    <Compile Include="Assets/Scripts/Chest.cs" />
-    <Compile Include="Assets/Scripts/Dabay.cs" />
-    <Compile Include="Assets/Scripts/CheckPoint.cs" />
-    <Compile Include="Assets/Scripts/Thacnuoc.cs" />
-    <Compile Include="Assets/Scripts/Trapp.cs" />
+    <Compile Include="Assets/Player/Scripts/DTrap.cs" />
+    <Compile Include="Assets/Player/Scripts/Trapp.cs" />
+    <Compile Include="Assets/Player/Scripts/Chest.cs" />
+    <Compile Include="Assets/Player/Scripts/Enemy2Controller.cs" />
     <Compile Include="Assets/LightningStrike.cs" />
-    <Compile Include="Assets/Scripts/Enemy2Health.cs" />
-    <Compile Include="Assets/Scripts/Trap.cs" />
-    <Compile Include="Assets/Scripts/DTrap.cs" />
-    <Compile Include="Assets/Scripts/VerticalLazeTrap.cs" />
-    <Compile Include="Assets/Scripts/QuestionPanel.cs" />
-    <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
+    <Compile Include="Assets/Player/Scripts/VerticalLazeTrap.cs" />
+    <Compile Include="Assets/Player/Scripts/ShurikenTrap.cs" />
+    <Compile Include="Assets/Player/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/PlayerSkills.cs" />
-    <Compile Include="Assets/Scripts/PlayerHealth.cs" />
-    <Compile Include="Assets/Scripts/FallTrap.cs" />
-    <Compile Include="Assets/Scripts/BossHealth.cs" />
+    <Compile Include="Assets/Player/Scripts/Thacnuoc.cs" />
+    <Compile Include="Assets/Player/Scripts/FallTrap.cs" />
+    <Compile Include="Assets/Player/Scripts/Enemy2Health.cs" />
+    <Compile Include="Assets/Player/Scripts/BossHealth.cs" />
+    <Compile Include="Assets/Player/Scripts/PlayerMovement.cs" />
+    <Compile Include="Assets/Player/Scripts/QuestionPanel.cs" />
     <Compile Include="Assets/LightningPowerUp.cs" />
-    <Compile Include="Assets/Scripts/PlayerMovement.cs" />
-    <Compile Include="Assets/Scripts/ShurikenTrap.cs" />
+    <Compile Include="Assets/Player/Scripts/Trap.cs" />
+    <Compile Include="Assets/Player/Scripts/Dabay.cs" />
+    <Compile Include="Assets/Player/Scripts/BossController.cs" />
+    <Compile Include="Assets/Player/Scripts/CheckPoint.cs" />
+    <Compile Include="Assets/Player/Scripts/Slaser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
