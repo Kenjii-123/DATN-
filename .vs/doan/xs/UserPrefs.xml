@@ -1,27 +1,29 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Enemy1Health.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GemPickup.cs">
     <Files>
       <File FileName="Assets/PlayerSkills.cs" Line="1" Column="1" />
       <File FileName="Assets/LightningPowerUp.cs" />
       <File FileName="Assets/LightningStrike.cs" />
       <File FileName="Assets/Player/Scripts/PlayerHealth.cs" />
-      <File FileName="Assets/Player/Scripts/Enemy2Health.cs" Line="26" Column="2" />
+      <File FileName="Assets/Player/Scripts/Enemy2Health.cs" Line="20" Column="1" />
       <File FileName="Assets/Player/Scripts/PlayerMovement.cs" />
-      <File FileName="Assets/Bullet.cs" Line="7" Column="32" />
-      <File FileName="Assets/Enemy1.cs" Line="130" Column="1" />
+      <File FileName="Assets/Bullet.cs" Line="11" Column="1" />
+      <File FileName="Assets/Enemy1.cs" Line="14" Column="1" />
       <File FileName="Assets/EnemyBullet.cs" Line="58" Column="36" />
-      <File FileName="Assets/Player/Scripts/Enemy2Controller.cs" Line="22" Column="43" />
-      <File FileName="Assets/Enemy1Health.cs" Line="52" Column="2" />
+      <File FileName="Assets/Player/Scripts/Enemy2Controller.cs" Line="132" Column="6" />
+      <File FileName="Assets/Enemy1Health.cs" Line="32" Column="2" />
+      <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
+      <File FileName="Assets/PlayerScore.cs" Line="12" Column="26" />
+      <File FileName="Assets/GemPickup.cs" Line="37" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Player" expanded="True">
-                <Node name="Scripts" expanded="True" />
-              </Node>
-              <Node name="Enemy1Health.cs" selected="True" />
+              <Node name="Player" expanded="True" />
+              <Node name="Scripts" expanded="True" />
+              <Node name="GemPickup.cs" selected="True" />
             </Node>
           </Node>
         </State>
