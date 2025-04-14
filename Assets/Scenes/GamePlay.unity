@@ -4155,6 +4155,8 @@ GameObject:
   - component: {fileID: 121328168}
   - component: {fileID: 121328167}
   - component: {fileID: 121328166}
+  - component: {fileID: 121328170}
+  - component: {fileID: 121328169}
   m_Layer: 12
   m_Name: 'GiantItem '
   m_TagString: 'GiantItem '
@@ -4250,6 +4252,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &121328169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121328165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.52, y: 0.57}
+    newSize: {x: 0.52, y: 0.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.57}
+  m_EdgeRadius: 0
+--- !u!114 &121328170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121328165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c74c4d04525246e2be74b2283ec70bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &122650312
 GameObject:
   m_ObjectHideFlags: 0
@@ -408776,8 +408835,8 @@ GameObject:
   - component: {fileID: 5594149625175021780}
   - component: {fileID: 8268971412481233284}
   - component: {fileID: 2633967217194979113}
-  - component: {fileID: 8616218584879385197}
   - component: {fileID: 8616218584879385198}
+  - component: {fileID: 8616218584879385199}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -408785,18 +408844,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8616218584879385197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616218584879385196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca395ad6344a7403597bf0ab1b544a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8616218584879385198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408811,6 +408858,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemCount: 0
   gemCountTextDisplay: {fileID: 552293821}
+--- !u!114 &8616218584879385199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616218584879385196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fac4a3f609843d0a499fc58264490b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGiantItem: 0
+  giantPowerUpDuration: 5
+  giantPowerUpScaleMultiplier: 2
+  transformationEffectPrefab: {fileID: 0}
+  transformationDuration: 0.5
 --- !u!61 &8617659736294286571
 BoxCollider2D:
   m_ObjectHideFlags: 0
