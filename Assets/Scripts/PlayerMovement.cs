@@ -31,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
     public float bulletSpeed = 10f;
     private int facingDirection = 1;
     private bool isShooting = false;
+    private bool hasGiantItem = false;
+
+    // Giant Armor Variables
+    public float giantArmorDuration = 5f;
+    private float giantArmorTimer = 0f;
+    public bool isGiantArmorActive = false; 
+    public GameObject giantArmorEffectPrefab; 
+    public Transform giantArmorEffectSpawnPoint; 
+    private GameObject currentArmorEffect;
 
     void Start()
     {
@@ -122,6 +131,24 @@ public class PlayerMovement : MonoBehaviour
             Shoot();
         }
 
+        
+        if (Input.GetKeyDown(KeyCode.G) && hasGiantItem && !isGiantArmorActive)
+        {
+            ActivateGiantArmor();
+            hasGiantItem = false; 
+            Debug.Log("Đã kích hoạt Giáp Khổng Lồ!");
+        }
+
+       
+        if (isGiantArmorActive)
+        {
+            giantArmorTimer -= Time.deltaTime;
+            if (giantArmorTimer <= 0f)
+            {
+                DeactivateGiantArmor();
+            }
+        }
+
         UpdateAnimation();
     }
 
@@ -142,6 +169,13 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
             }
             Destroy(other.gameObject);
+        }
+     
+        if (other.CompareTag("GiantItem"))
+        {
+            Destroy(other.gameObject);
+            hasGiantItem = true;
+            Debug.Log("Đã nhặt được vật phẩm khổng lồ. Nhấn 'G' để kích hoạt.");
         }
     }
 
@@ -213,5 +247,32 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogWarning("Chưa gán Bullet Prefab hoặc Fire Point!");
         }
         isShooting = false;
+    }
+
+    void ActivateGiantArmor()
+    {
+        isGiantArmorActive = true;
+        giantArmorTimer = giantArmorDuration;
+
+       
+        if (giantArmorEffectPrefab != null && giantArmorEffectSpawnPoint != null)
+        {
+            currentArmorEffect = Instantiate(giantArmorEffectPrefab, giantArmorEffectSpawnPoint.position, giantArmorEffectPrefab.transform.rotation, giantArmorEffectSpawnPoint);
+           
+        }
+    }
+
+    void DeactivateGiantArmor()
+    {
+        isGiantArmorActive = false;
+        giantArmorTimer = 0f;
+
+       
+        if (currentArmorEffect != null)
+        {
+            Destroy(currentArmorEffect);
+            currentArmorEffect = null;
+        }
+        Debug.Log("Giáp Khổng Lồ đã hết!");
     }
 }

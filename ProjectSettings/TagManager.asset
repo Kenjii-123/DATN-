@@ -10,7 +10,7 @@ TagManager:
   - djump
   - DashItem
   - 'Enemy '
-  - 'GiantItem '
+  - GiantItem
   layers:
   - Default
   - TransparentFX
@@ -25,7 +25,7 @@ TagManager:
   - djump
   - DashItem
   - 'GiantItem '
-  - 
+  - Player
   - 
   - 
   - 

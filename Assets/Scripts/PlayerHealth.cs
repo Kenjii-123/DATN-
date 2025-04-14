@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public float respawnDelay = 1f;
     public Image healthBarFill;
 
+    private PlayerMovement playerMovement;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -26,6 +28,12 @@ public class PlayerHealth : MonoBehaviour
             currentSpawnPoint = transform.position;
         }
         UpdateHealthUI();
+
+        playerMovement = GetComponent<PlayerMovement>();
+        if (playerMovement == null)
+        {
+            Debug.LogError("Không tìm thấy script PlayerMovement trên cùng GameObject!");
+        }
     }
 
     void Update()
@@ -34,17 +42,24 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        UpdateHealthUI();
-
-        if (animator != null)
+        if (playerMovement != null && playerMovement.isGiantArmorActive)
         {
-            animator.SetTrigger("isHurt");
+            return;
         }
-
-        if (currentHealth <= 0)
+        else
         {
-            Die();
+            currentHealth -= damage;
+            UpdateHealthUI();
+
+            if (animator != null)
+            {
+                animator.SetTrigger("isHurt");
+            }
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
