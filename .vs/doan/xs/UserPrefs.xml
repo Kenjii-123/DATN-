@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SandTrap.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" Line="192" Column="17" />
       <File FileName="Assets/Scripts/Enemy2Controller.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy2Health.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerSkills.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="278" Column="2" />
-      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="88" Column="10" />
+      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="109" Column="2" />
+      <File FileName="Assets/SandTrap.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="PlayerHealth.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="SandTrap.cs" selected="True" />
             </Node>
           </Node>
         </State>

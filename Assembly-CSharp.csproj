@@ -78,6 +78,7 @@
     <Compile Include="Assets/Scripts/QuestionPanel.cs" />
     <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
     <Compile Include="Assets/Scripts/PlayerSkills.cs" />
+    <Compile Include="Assets/SandTrap.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/FallTrap.cs" />
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
