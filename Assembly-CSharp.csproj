@@ -76,12 +76,14 @@
     <Compile Include="Assets/Scripts/EnemyBullet.cs" />
     <Compile Include="Assets/Scripts/DTrap.cs" />
     <Compile Include="Assets/Scripts/VerticalLazeTrap.cs" />
+    <Compile Include="Assets/SlimeHealth.cs" />
     <Compile Include="Assets/Scripts/QuestionPanel.cs" />
     <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
     <Compile Include="Assets/Scripts/PlayerSkills.cs" />
     <Compile Include="Assets/Scripts/CeilingTrap.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/FallTrap.cs" />
+    <Compile Include="Assets/SlimeController.cs" />
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />

@@ -24,8 +24,17 @@ public class Bullet : MonoBehaviour
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
             }
-            Destroy(gameObject);
+
+            SlimeHealth slimeHealth = other.GetComponent<SlimeHealth>();
+            if (slimeHealth != null)
+            {
+                slimeHealth.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 }

@@ -36,9 +36,9 @@ public class PlayerMovement : MonoBehaviour
     // Giant Armor Variables
     public float giantArmorDuration = 5f;
     private float giantArmorTimer = 0f;
-    public bool isGiantArmorActive = false; 
-    public GameObject giantArmorEffectPrefab; 
-    public Transform giantArmorEffectSpawnPoint; 
+    public bool isGiantArmorActive = false;
+    public GameObject giantArmorEffectPrefab;
+    public Transform giantArmorEffectSpawnPoint;
     private GameObject currentArmorEffect;
 
     void Start()
@@ -131,15 +131,13 @@ public class PlayerMovement : MonoBehaviour
             Shoot();
         }
 
-        
         if (Input.GetKeyDown(KeyCode.G) && hasGiantItem && !isGiantArmorActive)
         {
             ActivateGiantArmor();
-            hasGiantItem = false; 
+            hasGiantItem = false;
             Debug.Log("Đã kích hoạt Giáp Khổng Lồ!");
         }
 
-       
         if (isGiantArmorActive)
         {
             giantArmorTimer -= Time.deltaTime;
@@ -170,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-     
+
         if (other.CompareTag("GiantItem"))
         {
             Destroy(other.gameObject);
@@ -183,12 +181,20 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetTrigger("attackTrigger");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemyCollider in hitEnemies)
         {
-            Enemy2Health enemyHealth = enemy.GetComponent<Enemy2Health>();
+            Enemy2Health enemyHealth = enemyCollider.GetComponent<Enemy2Health>();
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(attackDamage);
+            }
+            else
+            {
+                SlimeHealth slimeHealth = enemyCollider.GetComponent<SlimeHealth>();
+                if (slimeHealth != null)
+                {
+                    slimeHealth.TakeDamage(attackDamage);
+                }
             }
         }
     }
@@ -254,11 +260,9 @@ public class PlayerMovement : MonoBehaviour
         isGiantArmorActive = true;
         giantArmorTimer = giantArmorDuration;
 
-       
         if (giantArmorEffectPrefab != null && giantArmorEffectSpawnPoint != null)
         {
             currentArmorEffect = Instantiate(giantArmorEffectPrefab, giantArmorEffectSpawnPoint.position, giantArmorEffectPrefab.transform.rotation, giantArmorEffectSpawnPoint);
-           
         }
     }
 
@@ -267,7 +271,6 @@ public class PlayerMovement : MonoBehaviour
         isGiantArmorActive = false;
         giantArmorTimer = 0f;
 
-       
         if (currentArmorEffect != null)
         {
             Destroy(currentArmorEffect);
