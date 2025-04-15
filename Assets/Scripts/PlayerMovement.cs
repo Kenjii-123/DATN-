@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     private int facingDirection = 1;
     private bool isShooting = false;
     private bool hasGiantItem = false;
-
-    // Giant Armor Variables
     public float giantArmorDuration = 5f;
     private float giantArmorTimer = 0f;
     public bool isGiantArmorActive = false;

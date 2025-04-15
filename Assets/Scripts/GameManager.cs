@@ -3,21 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // Biến static để tham chiếu đến instance duy nhất của GameManager
-
+    public static GameManager instance;
     public GameObject mapLv1;
     public GameObject mapLv2;
     public GameObject mapLv3;
-
+    public Transform spawnPointMap1; // Điểm spawn cho Level 1
+    public Transform spawnPointMap2; // Điểm spawn cho Level 2
+    public Transform spawnPointMap3; // Điểm spawn cho Level 3
+    public GameObject pauseMenuUI; // Tham chiếu đến Canvas Pause Menu trong Gameplay
+    public GameObject player; // Tham chiếu đến GameObject nhân vật (cần gán trong Inspector)
     private static int selectedLevel = 1;
 
     void Awake()
     {
-        // Đảm bảo chỉ có một instance của GameManager tồn tại
         if (instance == null)
         {
             instance = this;
-            // DontDestroyOnLoad(gameObject); // Nếu bạn muốn GameManager tồn tại khi chuyển scene (tùy chọn)
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ActivateLevel(selectedLevel);
+        SetPlayerSpawnPosition(selectedLevel); // Đặt vị trí ban đầu
     }
 
     private void ActivateLevel(int level)
@@ -38,32 +41,65 @@ public class GameManager : MonoBehaviour
         mapLv3.SetActive(level == 3);
     }
 
-    public static void SetSelectedLevel(int level)
+    private void SetPlayerSpawnPosition(int level)
     {
-        selectedLevel = level;
+        if (player != null)
+        {
+            switch (level)
+            {
+                case 1:
+                    player.transform.position = spawnPointMap1.position;
+                    break;
+                case 2:
+                    player.transform.position = spawnPointMap2.position;
+                    break;
+                case 3:
+                    player.transform.position = spawnPointMap3.position;
+                    break;
+                default:
+                    Debug.LogError("Invalid level selected: " + level);
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogError("Player GameObject not assigned in GameManager!");
+        }
     }
+
+    public static void SetSelectedLevel(int level) => selectedLevel = level;
 
     public void LoadPauseMenu()
     {
-        SceneManager.LoadScene(3);
-        Time.timeScale = 0f;
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Debug.LogError("Pause Menu UI không được gán trong GameManager!");
+        }
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Gameplay"); // Tải lại Gameplay
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit Game");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

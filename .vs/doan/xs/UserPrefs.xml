@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PauseMenuButtons.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" Line="192" Column="17" />
       <File FileName="Assets/Scripts/Enemy2Controller.cs" Line="108" Column="37" />
       <File FileName="Assets/Scripts/Enemy2Health.cs" Line="19" Column="32" />
       <File FileName="Assets/Scripts/PlayerSkills.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="28" Column="40" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="27" Column="29" />
       <File FileName="Assets/Scripts/PlayerHealth.cs" Line="109" Column="2" />
       <File FileName="Assets/SandTrap.cs" Line="28" Column="10" />
       <File FileName="Assets/CeilingTrap.cs" Line="115" Column="2" />
@@ -14,18 +14,18 @@
       <File FileName="Assets/SlimeController.cs" Line="169" Column="2" />
       <File FileName="Assets/SlimeHealth.cs" Line="45" Column="2" />
       <File FileName="Assets/Scripts/Bullet.cs" Line="23" Column="65" />
-      <File FileName="Assets/Scripts/SceneLoader.cs" Line="25" Column="2" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="73" Column="2" />
+      <File FileName="Assets/Scripts/SceneLoader.cs" Line="11" Column="50" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="56" Column="6" />
       <File FileName="Assets/Scripts/LevelSelectorButton.cs" Line="13" Column="2" />
-      <File FileName="Assets/PauseMenuButtons.cs" Line="50" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="PauseMenuButtons.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="GameManager.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

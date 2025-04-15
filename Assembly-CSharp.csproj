@@ -63,7 +63,6 @@
     <Compile Include="Assets/Scripts/Slaser.cs" />
     <Compile Include="Assets/Scripts/GemPickup.cs" />
     <Compile Include="Assets/Scripts/Chest.cs" />
-    <Compile Include="Assets/PauseMenuButtons.cs" />
     <Compile Include="Assets/Scripts/Dabay.cs" />
     <Compile Include="Assets/Scripts/CheckPoint.cs" />
     <Compile Include="Assets/Scripts/Thacnuoc.cs" />
