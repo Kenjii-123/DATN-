@@ -62,12 +62,12 @@
     <Compile Include="Assets/Scripts/Slaser.cs" />
     <Compile Include="Assets/Scripts/GemPickup.cs" />
     <Compile Include="Assets/Scripts/Chest.cs" />
-    <Compile Include="Assets/CeilingTrap.cs" />
     <Compile Include="Assets/Scripts/Dabay.cs" />
     <Compile Include="Assets/Scripts/CheckPoint.cs" />
     <Compile Include="Assets/Scripts/Thacnuoc.cs" />
     <Compile Include="Assets/Scripts/EnemyFlyingAI.cs" />
     <Compile Include="Assets/Scripts/Trapp.cs" />
+    <Compile Include="Assets/Scripts/SandTrap.cs" />
     <Compile Include="Assets/Scripts/PlayerScore.cs" />
     <Compile Include="Assets/Scripts/Enemy2Health.cs" />
     <Compile Include="Assets/Scripts/Bullet.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="Assets/Scripts/QuestionPanel.cs" />
     <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
     <Compile Include="Assets/Scripts/PlayerSkills.cs" />
-    <Compile Include="Assets/SandTrap.cs" />
+    <Compile Include="Assets/Scripts/CeilingTrap.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/FallTrap.cs" />
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
