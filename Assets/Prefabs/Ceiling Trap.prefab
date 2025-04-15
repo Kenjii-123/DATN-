@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 8103246412166278207}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2185245226978721038
 SpriteRenderer:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1696541976924751772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1d5e9f867374512abf82d15a8fbd7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0603c1ccadf8b449ea12f240d0f8f5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 50
@@ -171,8 +171,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   isActiveParameterName: IsActive
-  activeDuration: 0.88
-  inactiveDuration: 1.69
+  activeDuration: 1.5
+  inactiveDuration: 2.5
   damagePoint: {fileID: 8103246412166278207}
   damageCheckRadius: 0.3
 --- !u!1 &1851683382867139076
