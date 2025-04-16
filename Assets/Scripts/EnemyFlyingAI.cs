@@ -132,7 +132,7 @@ public class EnemyFlyingAI : MonoBehaviour
     {
         if (direction != Vector2.zero)
         {
-            // Thử đảo dấu góc
+           
             float targetAngle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -145,7 +145,7 @@ public class EnemyFlyingAI : MonoBehaviour
         {
             float relativePositionX = player.position.x - transform.position.x;
 
-            // Đảo ngược điều kiện lật
+          
             if (relativePositionX > 0)
             {
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
