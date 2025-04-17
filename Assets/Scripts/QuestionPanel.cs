@@ -1,80 +1,43 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using TMPro;
 
-public class QuestionPanel : MonoBehaviour
+public class QuestionPanelUI : MonoBehaviour
 {
-    public TextMeshProUGUI questionText; 
-    public Button[] answerButtons; 
-    public GameObject keyImage; 
+    public TMP_Text questionTextUI;
+    public List<Button> answerButtons;
 
-    
-    private string[] questions = { "Câu hỏi 1", "Câu hỏi 2", "Câu hỏi 3" };
-    private string[][] answers = {
-        new string[] { "Đáp án 1.1", "Đáp án 1.2", "Đáp án 1.3", "Đáp án 1.4" },
-        new string[] { "Đáp án 2.1", "Đáp án 2.2", "Đáp án 2.3", "Đáp án 2.4" },
-        new string[] { "Đáp án 3.1", "Đáp án 3.2", "Đáp án 3.3", "Đáp án 3.4" }
-    };
-    private int[] correctAnswers = { 0, 1, 2 }; 
+    private Question currentQuestion;
+    private Chest chestScript;
 
-   
-    private int currentQuestionIndex = 0; 
-    private int correctAnswersCount = 0; 
-
-    void Start()
+    public void SetQuestion(Question question, Chest chest)
     {
-    
-        ShowQuestion();
-        keyImage.SetActive(false);
-    }
+        currentQuestion = question;
+        chestScript = chest;
 
-    void ShowQuestion()
-    {
-   
-        if (currentQuestionIndex < questions.Length)
+        if (questionTextUI != null)
         {
-            questionText.text = questions[currentQuestionIndex];
-            for (int i = 0; i < answerButtons.Length; i++)
-            {
-                answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = answers[currentQuestionIndex][i];
-                int answerIndex = i;
+            questionTextUI.text = currentQuestion.questionText;
+        }
 
-               
-                answerButtons[i].onClick.RemoveAllListeners();
-                answerButtons[i].onClick.AddListener(() => CheckAnswer(answerIndex));
+        if (answerButtons.Count == currentQuestion.answers.Count)
+        {
+            for (int i = 0; i < answerButtons.Count; i++)
+            {
+                int answerIndex = i; 
+                TMP_Text buttonText = answerButtons[i].GetComponentInChildren<TMP_Text>();
+                if (buttonText != null)
+                {
+                    buttonText.text = currentQuestion.answers[i];
+                }
+                answerButtons[i].onClick.RemoveAllListeners(); // Đảm bảo không có listeners cũ
+                answerButtons[i].onClick.AddListener(() => chestScript.CheckAnswer(answerIndex == currentQuestion.correctAnswerIndex));
             }
         }
         else
         {
-            
-            Debug.Log("Kết thúc chuỗi câu hỏi!");
-            if (correctAnswersCount == questions.Length)
-            {
-                keyImage.SetActive(true);
-                Debug.Log("Bạn đã nhận được chìa khóa!");
-            }
-            else
-            {
-                Debug.Log("Bạn cần trả lời đúng tất cả các câu hỏi!");
-            }
+            Debug.LogError("Số lượng nút trả lời không khớp với số lượng đáp án trong QuestionPanelUI.");
         }
-    }
-
-   
-    public void CheckAnswer(int answerIndex)
-    {
-     
-        if (answerIndex == correctAnswers[currentQuestionIndex])
-        {
-            Debug.Log("Đáp án đúng!");
-            correctAnswersCount++;
-        }
-        else
-        {
-            Debug.Log("Đáp án sai!");
-        }
-
-        currentQuestionIndex++;
-        ShowQuestion();
     }
 }

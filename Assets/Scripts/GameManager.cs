@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,11 +9,14 @@ public class GameManager : MonoBehaviour
     public GameObject mapLv1;
     public GameObject mapLv2;
     public GameObject mapLv3;
-    public Transform spawnPointMap1; // Điểm spawn cho Level 1
-    public Transform spawnPointMap2; // Điểm spawn cho Level 2
-    public Transform spawnPointMap3; // Điểm spawn cho Level 3
-    public GameObject pauseMenuUI; // Tham chiếu đến Canvas Pause Menu trong Gameplay
-    public GameObject player; // Tham chiếu đến GameObject nhân vật (cần gán trong Inspector)
+    public Transform spawnPointMap1;
+    public Transform spawnPointMap2;
+    public Transform spawnPointMap3;
+    public GameObject pauseMenuUI;
+    public GameObject levelCompleteUI;
+    public GameObject player;
+    private static int currentLevel = 1;
+    public int nextLevelToLoad;
     private static int selectedLevel = 1;
 
     void Awake()
@@ -30,15 +35,23 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ActivateLevel(selectedLevel);
-        SetPlayerSpawnPosition(selectedLevel); // Đặt vị trí ban đầu
+        ActivateLevel(currentLevel);
+        SetPlayerSpawnPosition(currentLevel);
+        if (levelCompleteUI != null)
+        {
+            levelCompleteUI.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Level Complete UI không được gán trong GameManager!");
+        }
     }
 
     private void ActivateLevel(int level)
     {
-        mapLv1.SetActive(level == 1);
-        mapLv2.SetActive(level == 2);
-        mapLv3.SetActive(level == 3);
+        if (mapLv1 != null) mapLv1.SetActive(level == 1);
+        if (mapLv2 != null) mapLv2.SetActive(level == 2);
+        if (mapLv3 != null) mapLv3.SetActive(level == 3);
     }
 
     private void SetPlayerSpawnPosition(int level)
@@ -95,7 +108,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
-        Destroy(gameObject);
     }
 
     public void QuitGame()
@@ -105,5 +117,39 @@ public class GameManager : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void ShowLevelCompleteUI(int nextLevel)
+    {
+        if (levelCompleteUI != null)
+        {
+            levelCompleteUI.SetActive(true);
+            Time.timeScale = 0f;
+            nextLevelToLoad = nextLevel;
+        }
+        else
+        {
+            Debug.LogError("Level Complete UI không được gán trong GameManager!");
+        }
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        if (nextLevelToLoad > currentLevel)
+        {
+            ActivateLevel(currentLevel);
+            ActivateLevel(nextLevelToLoad);
+            SetPlayerSpawnPosition(nextLevelToLoad);
+            currentLevel = nextLevelToLoad;
+        }
+        else
+        {
+            Debug.LogWarning("Không có level tiếp theo hợp lệ để tải.");
+        }
+        if (levelCompleteUI != null)
+        {
+            levelCompleteUI.SetActive(false);
+        }
     }
 }
