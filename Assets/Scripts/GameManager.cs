@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ActivateLevel(currentLevel);
-        SetPlayerSpawnPosition(currentLevel);
+        ActivateLevel(selectedLevel); // Sử dụng selectedLevel để kích hoạt level ban đầu
+        SetPlayerSpawnPosition(selectedLevel); // Sử dụng selectedLevel để đặt vị trí spawn ban đầu
         if (levelCompleteUI != null)
         {
             levelCompleteUI.SetActive(false);
