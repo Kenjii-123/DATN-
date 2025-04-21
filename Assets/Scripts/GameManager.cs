@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
     private static int currentLevel = 1;
     public int nextLevelToLoad;
     private static int selectedLevel = 1;
-    public PlayerScore playerScore; // Kéo GameObject chứa PlayerScore vào đây trong Inspector
-
+    public PlayerScore playerScore; 
     void Awake()
     {
         if (instance == null)
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // Tìm PlayerScore nếu bạn không muốn kéo thả thủ công (đảm bảo PlayerScore nằm trên Player)
+        
         if (playerScore == null && player != null)
         {
             playerScore = player.GetComponent<PlayerScore>();
@@ -61,7 +60,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Level Complete UI không được gán trong GameManager!");
         }
 
-        // Reset số gem khi bắt đầu màn chơi mới (nếu cần)
+        
         if (playerScore != null)
         {
             playerScore.gemCount = 0;
