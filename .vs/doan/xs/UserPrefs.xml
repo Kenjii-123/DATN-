@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelSelectorButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerScore.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" />
@@ -13,11 +13,12 @@
       <File FileName="Assets/SlimeHealth.cs" />
       <File FileName="Assets/Scripts/Bullet.cs" />
       <File FileName="Assets/Scripts/SceneLoader.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" />
-      <File FileName="Assets/Scripts/LevelSelectorButton.cs" Line="8" Column="28" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="165" Column="18" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="39" Column="48" />
+      <File FileName="Assets/Scripts/LevelSelectorButton.cs" />
+      <File FileName="Assets/Scripts/Chest.cs" />
       <File FileName="Assets/Scripts/QuestionPanel.cs" />
       <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
+      <File FileName="Assets/Scripts/PlayerScore.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1aac949a-1dc5-4f5b-8977-14ed8cb500a5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8f21d5ae-f729-4053-b83f-8dd9e7f78efb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

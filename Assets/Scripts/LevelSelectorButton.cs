@@ -8,6 +8,6 @@ public class LevelSelectorButton : MonoBehaviour
     public void LoadLevel()
     {
         GameManager.SetSelectedLevel(levelToLoad);
-        SceneManager.LoadScene("Gameplay"); // Hoặc SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Gameplay");
     }
 }

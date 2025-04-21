@@ -28,6 +28,7 @@ public class Chest : MonoBehaviour
     public string currentLevelName;
     public List<LevelQuestions> allLevelQuestions;
     public float questionPanelShowDelay = 1f;
+    public int gemsNeededToOpen = 5; // Số gem cần để mở rương
 
     private bool playerInRange = false;
     private Animator animator;
@@ -97,7 +98,24 @@ public class Chest : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.O) && !chestOpened)
         {
+            TryOpenChest(); // Gọi hàm thử mở rương
+        }
+    }
+
+    void TryOpenChest()
+    {
+        if (gameManager != null && gameManager.playerScore != null && gameManager.playerScore.gemCount >= gemsNeededToOpen)
+        {
             OpenChest();
+            gameManager.playerScore.gemCount -= gemsNeededToOpen;
+            gameManager.playerScore.UpdateGemCountUI();
+            Debug.Log("Đã mở rương. Số gem còn lại: " + gameManager.playerScore.gemCount);
+        }
+        else
+        {
+            int currentGems = (gameManager != null && gameManager.playerScore != null) ? gameManager.playerScore.gemCount : 0;
+            Debug.Log("Không đủ gem để mở rương. Cần " + gemsNeededToOpen + " gem, bạn đang có " + currentGems + " gem.");
+            // Hiển thị thông báo cho người chơi trên UI (nếu cần)
         }
     }
 
