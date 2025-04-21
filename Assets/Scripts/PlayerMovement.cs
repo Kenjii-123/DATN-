@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject giantArmorEffectPrefab;
     public Transform giantArmorEffectSpawnPoint;
     private GameObject currentArmorEffect;
+    public GameObject pickupNotificationPrefab;
+    private Transform notificationParent;
 
     void Start()
     {
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalMoveSpeed = moveSpeed;
+        FindNotificationParent();
     }
 
     void Update()
@@ -164,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
             }
+            ShowNotification("Đã nhặt được tăng tốc, tốc độ của bạn tăng lên gấp đôi trong 5s.");
             Destroy(other.gameObject);
         }
 
@@ -171,7 +176,41 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
             hasGiantItem = true;
-            Debug.Log("Đã nhặt được vật phẩm khổng lồ. Nhấn 'G' để kích hoạt.");
+            ShowNotification("Đã nhặt được GiantItem, bấm G để miễn nhiễm sát thương từ quái vật trong 10s.");
+        }
+    }
+
+    void ShowNotification(string message)
+    {
+        if (pickupNotificationPrefab != null && notificationParent != null)
+        {
+            GameObject notificationInstance = Instantiate(pickupNotificationPrefab, notificationParent);
+            ItemPickupNotification notificationScript = notificationInstance.GetComponent<ItemPickupNotification>();
+            if (notificationScript != null)
+            {
+                notificationScript.Show(message);
+            }
+            else
+            {
+                Debug.LogError("Không tìm thấy script ItemPickupNotification trên prefab!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Chưa gán Pickup Notification Prefab hoặc không tìm thấy Notification Parent!");
+        }
+    }
+
+    void FindNotificationParent()
+    {
+        Canvas mainCanvas = FindObjectOfType<Canvas>();
+        if (mainCanvas != null)
+        {
+            notificationParent = mainCanvas.transform;
+        }
+        else
+        {
+            Debug.LogError("Không tìm thấy Canvas chính trong Scene!");
         }
     }
 

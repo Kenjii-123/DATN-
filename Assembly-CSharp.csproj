@@ -89,6 +89,7 @@
     <Compile Include="Assets/SlimeController.cs" />
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
+    <Compile Include="Assets/ItemPickupNotification.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/ShurikenTrap.cs" />
   </ItemGroup>
