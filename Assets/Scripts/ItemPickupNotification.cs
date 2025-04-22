@@ -17,16 +17,16 @@ public class ItemPickupNotification : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);
         }
     }
 
-    public void Show(string itemName)
+    public void Show(string message) // Chỉ nhận một chuỗi thông báo
     {
         if (itemNameText != null)
         {
-            itemNameText.text = itemName;
+            itemNameText.text = message; // Gán trực tiếp thông báo vào text UI
         }
-        gameObject.SetActive(true); 
+        gameObject.SetActive(true);
     }
 }

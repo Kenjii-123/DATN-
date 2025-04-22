@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/Thacnuoc.cs" />
     <Compile Include="Assets/Scripts/EnemyFlyingAI.cs" />
     <Compile Include="Assets/Scripts/Trapp.cs" />
+    <Compile Include="Assets/Scripts/ItemPickupNotification.cs" />
     <Compile Include="Assets/Scripts/SandTrap.cs" />
     <Compile Include="Assets/Scripts/PlayerScore.cs" />
     <Compile Include="Assets/Scripts/Enemy2Health.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/DTrap.cs" />
     <Compile Include="Assets/Scripts/VerticalLazeTrap.cs" />
-    <Compile Include="Assets/SlimeHealth.cs" />
     <Compile Include="Assets/Scripts/QuestionPanel.cs" />
     <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
     <Compile Include="Assets/Scripts/PlayerSkills.cs" />
@@ -86,10 +86,10 @@
     <Compile Include="Assets/Scripts/SceneLoader.cs" />
     <Compile Include="Assets/Scripts/PlayerHealth.cs" />
     <Compile Include="Assets/Scripts/FallTrap.cs" />
-    <Compile Include="Assets/SlimeController.cs" />
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
-    <Compile Include="Assets/ItemPickupNotification.cs" />
+    <Compile Include="Assets/Scripts/SlimeController.cs" />
+    <Compile Include="Assets/Scripts/SlimeHealth.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/ShurikenTrap.cs" />
   </ItemGroup>
