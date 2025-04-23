@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
-  damage: 30
+  damage: 15
   lifeTime: 0.7
   enemyLayer:
     serializedVersion: 2

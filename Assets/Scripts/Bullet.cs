@@ -35,6 +35,14 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
+
+            BossHealth bossHealth = other.GetComponent<BossHealth>();
+            if (bossHealth != null)
+            {
+                bossHealth.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 }

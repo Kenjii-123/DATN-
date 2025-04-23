@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BossHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" />
       <File FileName="Assets/Scripts/Enemy2Controller.cs" />
       <File FileName="Assets/Scripts/Enemy2Health.cs" />
       <File FileName="Assets/Scripts/PlayerSkills.cs" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="237" Column="6" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="227" Column="14" />
       <File FileName="Assets/Scripts/PlayerHealth.cs" />
       <File FileName="Assets/Scripts/Trapp.cs" />
       <File FileName="Assets/Scripts/Bullet.cs" />
@@ -17,8 +17,9 @@
       <File FileName="Assets/Scripts/QuestionPanel.cs" />
       <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
       <File FileName="Assets/Scripts/PlayerScore.cs" />
-      <File FileName="Assets/Scripts/BossController.cs" Line="252" Column="2" />
+      <File FileName="Assets/Scripts/BossController.cs" Line="204" Column="51" />
       <File FileName="Assets/Scripts/BossHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CheckPoint.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +27,7 @@
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="BossHealth.cs" selected="True" />
+                <Node name="PlayerMovement.cs" selected="True" />
               </Node>
             </Node>
           </Node>
