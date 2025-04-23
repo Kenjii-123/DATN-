@@ -63,6 +63,7 @@
     <Compile Include="Assets/Scripts/Slaser.cs" />
     <Compile Include="Assets/Scripts/GemPickup.cs" />
     <Compile Include="Assets/Scripts/Chest.cs" />
+    <Compile Include="Assets/GolemHealth.cs" />
     <Compile Include="Assets/Scripts/Dabay.cs" />
     <Compile Include="Assets/Scripts/CheckPoint.cs" />
     <Compile Include="Assets/Scripts/Thacnuoc.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
     <Compile Include="Assets/Scripts/SlimeController.cs" />
+    <Compile Include="Assets/GolemController.cs" />
     <Compile Include="Assets/Scripts/SlimeHealth.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/ShurikenTrap.cs" />

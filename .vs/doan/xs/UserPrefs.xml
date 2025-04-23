@@ -1,34 +1,35 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GolemHealth.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" />
       <File FileName="Assets/Scripts/Enemy2Controller.cs" />
       <File FileName="Assets/Scripts/Enemy2Health.cs" />
-      <File FileName="Assets/Scripts/PlayerSkills.cs" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="227" Column="14" />
+      <File FileName="Assets/Scripts/PlayerSkills.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="248" Column="26" />
       <File FileName="Assets/Scripts/PlayerHealth.cs" />
       <File FileName="Assets/Scripts/Trapp.cs" />
-      <File FileName="Assets/Scripts/Bullet.cs" />
+      <File FileName="Assets/Scripts/Bullet.cs" Line="26" Column="26" />
       <File FileName="Assets/Scripts/SceneLoader.cs" />
       <File FileName="Assets/Scripts/GameManager.cs" />
       <File FileName="Assets/Scripts/LevelSelectorButton.cs" />
       <File FileName="Assets/Scripts/Chest.cs" />
       <File FileName="Assets/Scripts/QuestionPanel.cs" />
       <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
-      <File FileName="Assets/Scripts/PlayerScore.cs" />
-      <File FileName="Assets/Scripts/BossController.cs" Line="204" Column="51" />
+      <File FileName="Assets/Scripts/PlayerScore.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BossController.cs" Line="76" Column="18" />
       <File FileName="Assets/Scripts/BossHealth.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CheckPoint.cs" Line="1" Column="1" />
+      <File FileName="Assets/GolemController.cs" Line="170" Column="12" />
+      <File FileName="Assets/GolemHealth.cs" Line="20" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="PlayerMovement.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="GolemHealth.cs" selected="True" />
             </Node>
           </Node>
         </State>

@@ -239,6 +239,14 @@ public class PlayerMovement : MonoBehaviour
                     {
                         bossHealth.TakeDamage(attackDamage);
                     }
+                    else
+                    {
+                        GolemHealth golemHealth = enemyCollider.GetComponent<GolemHealth>();
+                        if (golemHealth != null)
+                        {
+                            golemHealth.TakeDamage(attackDamage);
+                        }
+                    }
                 }
             }
         }
