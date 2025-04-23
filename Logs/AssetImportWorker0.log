@@ -2005,3 +2005,99 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4570.215820 seconds.
+  path: Assets/Enemy/New Folder
+  artifactKey: Guid(5cc4bee9548874707a138d291557546a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder using Guid(5cc4bee9548874707a138d291557546a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f5245ad2cdc67287787c44c92d07fc') in 0.010366 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 16.381699 seconds.
+  path: Assets/Enemy/enemy3/Attack 1.png
+  artifactKey: Guid(e815eea0a5eac41f6abcb4a7bbbcb60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/enemy3/Attack 1.png using Guid(e815eea0a5eac41f6abcb4a7bbbcb60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '746a17ad2e27553c53350cbb0c8994f9') in 0.094752 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 52.044717 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_attack.png
+  artifactKey: Guid(5140d523efaa645f18f3870d465719bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_attack.png using Guid(5140d523efaa645f18f3870d465719bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47c3c2c2eba116aa41448757b9d9c65f') in 0.008825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_walk.png
+  artifactKey: Guid(8746627dee29d454a8fc8b3e934a210e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_walk.png using Guid(8746627dee29d454a8fc8b3e934a210e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6e0e3438f3eb0e6947989b83d002bf7') in 0.004892 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 17.131305 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_attack.png
+  artifactKey: Guid(5140d523efaa645f18f3870d465719bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_attack.png using Guid(5140d523efaa645f18f3870d465719bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd53f9ec688db8919555f27bc3b10846') in 0.003447 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_idle.png
+  artifactKey: Guid(c9cdf0257c417444aa4cdea9b162f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_idle.png using Guid(c9cdf0257c417444aa4cdea9b162f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acd0029bf6aa670e8d589adc8c735cad') in 0.002859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 57.300085 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_attack.png
+  artifactKey: Guid(5140d523efaa645f18f3870d465719bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_attack.png using Guid(5140d523efaa645f18f3870d465719bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d07c6bc79f04bbfc5ac269f3b8dd91e') in 0.031730 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 132.525614 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_die.png
+  artifactKey: Guid(9d8b52d75d811425281b07ead773d903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_die.png using Guid(9d8b52d75d811425281b07ead773d903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30dedddb4236d31ade182ea79abc1525') in 0.056595 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 37
+========================================================================
+Received Import Request.
+  Time since last request: 10.679323 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_hurt.png
+  artifactKey: Guid(8d78cd229033c416f8916ff520b4c3de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_hurt.png using Guid(8d78cd229033c416f8916ff520b4c3de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaa37fae637ecc0152e7417cc43645bb') in 0.010826 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 10.898044 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_idle.png
+  artifactKey: Guid(c9cdf0257c417444aa4cdea9b162f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_idle.png using Guid(c9cdf0257c417444aa4cdea9b162f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88e6f573c38bef59675b03f83d609d33') in 0.016775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 15.565007 seconds.
+  path: Assets/Enemy/New Folder/Golem_1_walk.png
+  artifactKey: Guid(8746627dee29d454a8fc8b3e934a210e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemy/New Folder/Golem_1_walk.png using Guid(8746627dee29d454a8fc8b3e934a210e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5409fccb9a17874c0d6602f908d06df2') in 0.020250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 7.781449 seconds.
+  path: Assets/Scenes/GamePlay.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GamePlay.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c13a569e1b58c2cc6c98a4f1da173346') in 0.000639 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
