@@ -4,13 +4,19 @@ public class BossController : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public float attackRange = 5f;
-    public float shootRange = 8f;
-    public float attackCooldown = 2f;
+    public float attack1Cooldown = 2f;
+    public float attack2Cooldown = 3f;
     public float detectionRange = 10f;
-    public GameObject laserPrefab;
-    public Transform laserSpawnPoint;
-    public int attackDamage = 20;
-    public int shootDamage = 15;
+    public int attack1Damage = 20;
+    public int attack2Damage = 25;
+
+    [Header("Summoning")]
+    public GameObject minionPrefab;
+    public Transform[] summonPoints;
+    public float summonCooldown = 5f;
+    public int maxMinions = 2; // Tối đa số lượng quái con triệu hồi
+    private float nextSummonTime = 0f;
+    private int currentMinionCount = 0;
 
     private Transform player;
     private Animator animator;
@@ -20,7 +26,8 @@ public class BossController : MonoBehaviour
     private bool isAttacking = false;
     private bool hasDealtDamage = false;
     private float attackTimer = 0f;
-    private float lastAttackTime = -Mathf.Infinity;
+    private float lastAttack1Time = -Mathf.Infinity;
+    private float lastAttack2Time = -Mathf.Infinity;
     private bool isMoving = false;
 
     public Transform groundCheck;
@@ -45,6 +52,7 @@ public class BossController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float currentHealthPercentage = (float)bossHealth.currentHealth / bossHealth.maxHealth;
 
         if (distanceToPlayer <= detectionRange)
         {
@@ -59,36 +67,58 @@ public class BossController : MonoBehaviour
         {
             attackTimer += Time.deltaTime;
         }
-        if (!isAttacking)
-        {
-            if (isMoving)
-            {
-                MoveAndAttack();
-            }
-            else
-            {
-                rb.velocity = Vector2.zero;
-                animator.SetBool("IsRun", false);
-            }
-        }
-    }
 
-    void MoveAndAttack()
-    {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (distanceToPlayer <= attackRange && isGrounded && Time.time >= lastAttackTime + attackCooldown)
+        if (!isAttacking && isMoving && isGrounded)
         {
-            Attack();
+            if (currentHealthPercentage >= 1f) // Full health - Attack 1
+            {
+                if (distanceToPlayer <= attackRange && Time.time >= lastAttack1Time + attack1Cooldown)
+                {
+                    Attack1();
+                }
+                else
+                {
+                    MoveTowardsPlayer();
+                }
+            }
+            else if (currentHealthPercentage < 0.5f) // Below 50% health - Attack 2 and Summon
+            {
+                if (distanceToPlayer <= attackRange && Time.time >= lastAttack2Time + attack2Cooldown)
+                {
+                    Attack2();
+                }
+                else if (Time.time >= nextSummonTime && currentMinionCount < maxMinions && minionPrefab != null && summonPoints.Length > 0)
+                {
+                    SummonMinion();
+                    nextSummonTime = Time.time + summonCooldown;
+                }
+                else
+                {
+                    MoveTowardsPlayer();
+                }
+            }
+            else // Between full and 50% - Prioritize Attack 1, then maybe Attack 2
+            {
+                if (distanceToPlayer <= attackRange && Time.time >= lastAttack1Time + attack1Cooldown)
+                {
+                    Attack1();
+                }
+                else if (distanceToPlayer <= attackRange && Time.time >= lastAttack2Time + attack2Cooldown)
+                {
+                    Attack2();
+                }
+                else
+                {
+                    MoveTowardsPlayer();
+                }
+            }
         }
-        else if (distanceToPlayer <= shootRange && isGrounded && Time.time >= lastAttackTime + attackCooldown)
+        else if (!isMoving)
         {
-            Shoot();
+            rb.velocity = Vector2.zero;
+            animator.SetBool("IsRun", false);
         }
-        else if (isGrounded)
-        {
-            MoveTowardsPlayer();
-        }
-        else
+        else if (!isGrounded)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
             animator.SetBool("IsRun", false);
@@ -102,57 +132,99 @@ public class BossController : MonoBehaviour
         animator.SetBool("IsRun", true);
         if (player.position.x < transform.position.x)
         {
-            transform.localScale = new Vector3(-12, 12, 9);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         else
         {
-            transform.localScale = new Vector3(12, 12, 9);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
     }
 
-    void Attack()
+    void Attack1()
     {
         isAttacking = true;
         hasDealtDamage = false;
         attackTimer = 0f;
-        lastAttackTime = Time.time;
+        lastAttack1Time = Time.time;
         rb.velocity = Vector2.zero;
         animator.SetBool("IsRun", false);
         animator.SetTrigger("IsAttack1");
-        Invoke("DealDamage", 0.5f);
+        Invoke("DealAttack1Damage", 0.5f);
     }
 
-    void Shoot()
+    void Attack2()
     {
         isAttacking = true;
         hasDealtDamage = false;
         attackTimer = 0f;
-        lastAttackTime = Time.time;
+        lastAttack2Time = Time.time;
         rb.velocity = Vector2.zero;
         animator.SetBool("IsRun", false);
-        animator.SetTrigger("IsShoot");
-        Instantiate(laserPrefab, laserSpawnPoint.position, laserSpawnPoint.rotation);
-        Invoke("DealShootDamage", 0.5f);
+        animator.SetTrigger("IsAttack2");
+        Invoke("DealAttack2Damage", 0.6f); // Adjust timing based on your Attack 2 animation
     }
 
-    void DealDamage()
+    void DealAttack1Damage()
     {
-        if (!hasDealtDamage)
+        if (!hasDealtDamage && Vector2.Distance(transform.position, player.position) <= attackRange)
         {
-            player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(attack1Damage);
+            }
             hasDealtDamage = true;
         }
         isAttacking = false;
     }
 
-    void DealShootDamage()
+    void DealAttack2Damage()
     {
-        if (!hasDealtDamage)
+        if (!hasDealtDamage && Vector2.Distance(transform.position, player.position) <= attackRange)
         {
-            player.GetComponent<PlayerHealth>().TakeDamage(shootDamage);
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(attack2Damage);
+            }
             hasDealtDamage = true;
         }
         isAttacking = false;
+    }
+
+    void SummonMinion()
+    {
+        if (minionPrefab != null && summonPoints.Length > 0)
+        {
+            animator.SetTrigger("IsSummon"); // Trigger a summon animation
+            rb.velocity = Vector2.zero;
+            animator.SetBool("IsRun", false);
+            isAttacking = true; // Prevent other actions during summon
+
+            Invoke("ActuallySummonMinion", 0.8f); // Delay the actual summoning to match animation
+            nextSummonTime = Time.time + summonCooldown;
+        }
+        else
+        {
+            Debug.LogWarning("Minion Prefab không được gán hoặc không có điểm triệu hồi!");
+        }
+    }
+
+    void ActuallySummonMinion()
+    {
+        if (minionPrefab != null && summonPoints.Length > 0 && currentMinionCount < maxMinions)
+        {
+            int randomSummonPointIndex = Random.Range(0, summonPoints.Length);
+            Transform summonPoint = summonPoints[randomSummonPointIndex];
+            Instantiate(minionPrefab, summonPoint.position, Quaternion.identity);
+            currentMinionCount++;
+        }
+        isAttacking = false;
+    }
+
+    public void MinionDied()
+    {
+        currentMinionCount--;
     }
 
     public void Die()
@@ -174,5 +246,7 @@ public class BossController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

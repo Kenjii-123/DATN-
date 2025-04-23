@@ -232,6 +232,14 @@ public class PlayerMovement : MonoBehaviour
                 {
                     slimeHealth.TakeDamage(attackDamage);
                 }
+                else
+                {
+                    BossHealth bossHealth = enemyCollider.GetComponent<BossHealth>();
+                    if (bossHealth != null)
+                    {
+                        bossHealth.TakeDamage(attackDamage);
+                    }
+                }
             }
         }
     }
