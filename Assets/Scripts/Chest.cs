@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 [System.Serializable]
 public struct Question
@@ -21,16 +22,19 @@ public class Chest : MonoBehaviour
     public float questionPanelShowDelay = 1f;
     public int gemsNeededToOpen = 5;
     public string nextSceneName;
+    public GameObject interactionUIPrefab;
+    public Transform notificationParent;
 
     private bool playerInRange = false;
     private Animator animator;
-    private int correctAnswers = 0;
+    public int correctAnswers = 0;
     private bool chestOpened = false;
     private GameObject currentQuestionPanelInstance;
     private List<Question> currentQuestionsToAsk;
     private Question currentQuestion;
-    private int currentQuestionIndex = 0;
+    public int currentQuestionIndex = 0;
     private GameManager gameManager;
+    private GameObject currentInteractionUIInstance;
 
     private string levelName;
 
@@ -56,6 +60,24 @@ public class Chest : MonoBehaviour
         {
             Debug.LogWarning($"Chest trên level {levelName} không có câu hỏi nào.");
         }
+
+        FindNotificationParent();
+    }
+
+    void FindNotificationParent()
+    {
+        if (notificationParent == null)
+        {
+            Canvas mainCanvas = FindObjectOfType<Canvas>();
+            if (mainCanvas != null)
+            {
+                notificationParent = mainCanvas.transform;
+            }
+            else
+            {
+                Debug.LogError("Không tìm thấy Canvas chính trong Scene!");
+            }
+        }
     }
 
     void LoadProgress()
@@ -76,9 +98,10 @@ public class Chest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !chestOpened)
         {
             playerInRange = true;
+            ShowInteractionUI();
         }
     }
 
@@ -87,6 +110,7 @@ public class Chest : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            HideInteractionUI();
         }
     }
 
@@ -106,16 +130,18 @@ public class Chest : MonoBehaviour
             gameManager.playerScore.gemCount -= gemsNeededToOpen;
             gameManager.playerScore.UpdateGemCountUI();
             Debug.Log("Đã mở rương. Số gem còn lại: " + gameManager.playerScore.gemCount);
+            HideInteractionUI();
         }
         else
         {
-            int currentGems = (gameManager != null && gameManager.playerScore != null) ? gameManager.playerScore.gemCount : 0;
-            Debug.Log("Không đủ gem để mở rương. Cần " + gemsNeededToOpen + " gem, bạn đang có " + currentGems + " gem.");
+            ShowInsufficientGemsUI();
         }
     }
 
     void OpenChest()
     {
+        correctAnswers = 0;
+        currentQuestionIndex = 0;
         chestOpened = true;
         animator.SetTrigger("IsOpen");
         Invoke("ShowQuestionPanel", questionPanelShowDelay);
@@ -140,26 +166,7 @@ public class Chest : MonoBehaviour
         else
         {
             Debug.LogError("Question Panel Prefab hoặc Parent chưa được gán, hoặc không có câu hỏi nào để hiển thị.");
-            if (currentQuestionsToAsk.Count > 0 && currentQuestionIndex >= currentQuestionsToAsk.Count)
-            {
-                Debug.Log("Đã trả lời hết số câu hỏi yêu cầu từ chest này.");
-                if (!string.IsNullOrEmpty(nextSceneName) && gameManager != null)
-                {
-                    if (int.TryParse(nextSceneName, out int nextLevel))
-                    {
-                        gameManager.ShowLevelCompleteUI(nextLevel);
-                    }
-                    else
-                    {
-                        Debug.LogError("nextSceneName không phải là số hợp lệ.");
-                        gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
-                    }
-                }
-                else if (gameManager != null)
-                {
-                    gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
-                }
-            }
+            HandleChestCompletion();
         }
     }
 
@@ -190,22 +197,71 @@ public class Chest : MonoBehaviour
         else
         {
             Debug.Log("Đã trả lời hết số câu hỏi yêu cầu từ chest này.");
-            if (!string.IsNullOrEmpty(nextSceneName) && gameManager != null)
+            HandleChestCompletion();
+        }
+    }
+
+    void HandleChestCompletion()
+    {
+        if (!string.IsNullOrEmpty(nextSceneName) && gameManager != null)
+        {
+            if (int.TryParse(nextSceneName, out int nextLevel))
             {
-                if (int.TryParse(nextSceneName, out int nextLevel))
-                {
-                    gameManager.ShowLevelCompleteUI(nextLevel);
-                }
-                else
-                {
-                    Debug.LogError("nextSceneName không phải là số hợp lệ.");
-                    gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
-                }
+                gameManager.ShowLevelCompleteUI(nextLevel);
             }
-            else if (gameManager != null)
+            else
             {
+                Debug.LogError("nextSceneName không phải là số hợp lệ.");
                 gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
             }
+        }
+        else if (gameManager != null)
+        {
+            gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
+        }
+    }
+
+    void ShowInteractionUI()
+    {
+        if (interactionUIPrefab != null && notificationParent != null && currentInteractionUIInstance == null)
+        {
+            currentInteractionUIInstance = Instantiate(interactionUIPrefab, notificationParent);
+            TextMeshProUGUI notificationText = currentInteractionUIInstance.GetComponentInChildren<TextMeshProUGUI>();
+            if (notificationText != null)
+            {
+                notificationText.text = $"Bấm {KeyCode.O.ToString().ToUpper()} để mở rương. (Cần {gemsNeededToOpen} gem)";
+            }
+            else
+            {
+                Debug.LogError("Không tìm thấy TextMeshProUGUI trong Interaction UI Prefab!");
+            }
+        }
+    }
+
+    void HideInteractionUI()
+    {
+        if (currentInteractionUIInstance != null)
+        {
+            Destroy(currentInteractionUIInstance);
+            currentInteractionUIInstance = null;
+        }
+    }
+
+    void ShowInsufficientGemsUI()
+    {
+        if (interactionUIPrefab != null && notificationParent != null)
+        {
+            GameObject insufficientGemsUI = Instantiate(interactionUIPrefab, notificationParent);
+            TextMeshProUGUI notificationText = insufficientGemsUI.GetComponentInChildren<TextMeshProUGUI>();
+            if (notificationText != null)
+            {
+                notificationText.text = "Không đủ Gem, hãy thu thập thêm!";
+            }
+            else
+            {
+                Debug.LogError("Không tìm thấy TextMeshProUGUI trong Interaction UI Prefab!");
+            }
+            Destroy(insufficientGemsUI, 2f);
         }
     }
 }
