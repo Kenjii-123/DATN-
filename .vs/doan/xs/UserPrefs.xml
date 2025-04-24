@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GolemHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bullet.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" />
@@ -22,14 +22,16 @@
       <File FileName="Assets/Scripts/CheckPoint.cs" Line="1" Column="1" />
       <File FileName="Assets/GolemController.cs" Line="170" Column="12" />
       <File FileName="Assets/GolemHealth.cs" Line="20" Column="44" />
+      <File FileName="Assets/Scripts/CeilingTrap.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="GolemHealth.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Bullet.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

@@ -61,7 +61,6 @@
     <Compile Include="Assets/Scripts/BossController.cs" />
     <Compile Include="Assets/Scripts/LevelSelectorButton.cs" />
     <Compile Include="Assets/Scripts/Slaser.cs" />
-    <Compile Include="Assets/GolemHealth.cs" />
     <Compile Include="Assets/Scripts/GemPickup.cs" />
     <Compile Include="Assets/Scripts/Chest.cs" />
     <Compile Include="Assets/Scripts/Dabay.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="Assets/Scripts/EnemyBullet.cs" />
     <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/DTrap.cs" />
+    <Compile Include="Assets/Scripts/GolemController.cs" />
     <Compile Include="Assets/Scripts/VerticalLazeTrap.cs" />
     <Compile Include="Assets/Scripts/QuestionPanel.cs" />
     <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
@@ -90,9 +90,9 @@
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
     <Compile Include="Assets/Scripts/SlimeController.cs" />
-    <Compile Include="Assets/GolemController.cs" />
     <Compile Include="Assets/Scripts/SlimeHealth.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
+    <Compile Include="Assets/Scripts/GolemHealth.cs" />
     <Compile Include="Assets/Scripts/ShurikenTrap.cs" />
   </ItemGroup>
   <ItemGroup>

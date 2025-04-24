@@ -43,6 +43,13 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
+            GolemHealth golemHealth = other.GetComponent<GolemHealth>();
+            if (golemHealth != null)
+            {
+                golemHealth.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 }
