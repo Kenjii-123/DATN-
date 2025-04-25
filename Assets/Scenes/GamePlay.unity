@@ -435330,7 +435330,7 @@ MonoBehaviour:
   attackSound: {fileID: 8300000, guid: ca4a937f566514e33a7532b7e7eb82f6, type: 3}
   shootSound: {fileID: 8300000, guid: cb240b9c908574b969a8cf2da52f19e5, type: 3}
   pickupItemSound: {fileID: 8300000, guid: 030e2facc8e3746969058d845a681fcd, type: 3}
-  useItemSound: {fileID: 8300000, guid: 030e2facc8e3746969058d845a681fcd, type: 3}
+  useItemSound: {fileID: 8300000, guid: f5b8ce59fcf54423482c6e89c677e870, type: 3}
   takeDamageSound: {fileID: 8300000, guid: 7be7be284b5c049828fb33931fd215fb, type: 3}
   dieSound: {fileID: 8300000, guid: 65b31e5dfabd34379ad35e7a05d987a7, type: 3}
   reviveSound: {fileID: 8300000, guid: e6f5166bbb3934fc186f77ad5c8be4e7, type: 3}
@@ -436587,6 +436587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemCount: 0
   gemCountTextDisplay: {fileID: 552293821}
+  coinCollectSound: {fileID: 8300000, guid: 59b6811550a804f5f8a17de08869d723, type: 3}
 --- !u!82 &8616218584879385199
 AudioSource:
   m_ObjectHideFlags: 0
