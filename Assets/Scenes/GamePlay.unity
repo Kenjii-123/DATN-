@@ -23936,7 +23936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 377, y: 47.3, z: -10}
+  m_LocalPosition: {x: 105, y: 287, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -383781,7 +383781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669632630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 377, y: 47.3, z: -10}
+  m_LocalPosition: {x: 105, y: 287, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -417964,6 +417964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0}
+  checkpointSound: {fileID: 8300000, guid: e6f5166bbb3934fc186f77ad5c8be4e7, type: 3}
 --- !u!4 &3703356725662747812
 Transform:
   m_ObjectHideFlags: 0
@@ -418994,6 +418995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0}
+  checkpointSound: {fileID: 8300000, guid: e6f5166bbb3934fc186f77ad5c8be4e7, type: 3}
 --- !u!4 &4004620956295562360
 Transform:
   m_ObjectHideFlags: 0
@@ -434521,7 +434523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616218584879385196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 377, y: 47.3, z: 0}
+  m_LocalPosition: {x: 105, y: 287, z: 0}
   m_LocalScale: {x: 9, y: 9, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:

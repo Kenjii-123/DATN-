@@ -14,7 +14,7 @@ public class BossController : MonoBehaviour
     public GameObject minionPrefab;
     public Transform[] summonPoints;
     public float summonCooldown = 5f;
-    public int maxMinions = 2; // Tối đa số lượng quái con triệu hồi
+    public int maxMinions = 2; 
     private float nextSummonTime = 0f;
     private int currentMinionCount = 0;
 
@@ -70,7 +70,7 @@ public class BossController : MonoBehaviour
 
         if (!isAttacking && isMoving && isGrounded)
         {
-            if (currentHealthPercentage >= 1f) // Full health - Attack 1
+            if (currentHealthPercentage >= 1f)
             {
                 if (distanceToPlayer <= attackRange && Time.time >= lastAttack1Time + attack1Cooldown)
                 {
@@ -81,7 +81,7 @@ public class BossController : MonoBehaviour
                     MoveTowardsPlayer();
                 }
             }
-            else if (currentHealthPercentage < 0.5f) // Below 50% health - Attack 2 and Summon
+            else if (currentHealthPercentage < 0.5f) 
             {
                 if (distanceToPlayer <= attackRange && Time.time >= lastAttack2Time + attack2Cooldown)
                 {
@@ -97,7 +97,7 @@ public class BossController : MonoBehaviour
                     MoveTowardsPlayer();
                 }
             }
-            else // Between full and 50% - Prioritize Attack 1, then maybe Attack 2
+            else 
             {
                 if (distanceToPlayer <= attackRange && Time.time >= lastAttack1Time + attack1Cooldown)
                 {
@@ -161,7 +161,7 @@ public class BossController : MonoBehaviour
         rb.velocity = Vector2.zero;
         animator.SetBool("IsRun", false);
         animator.SetTrigger("IsAttack2");
-        Invoke("DealAttack2Damage", 0.6f); // Adjust timing based on your Attack 2 animation
+        Invoke("DealAttack2Damage", 0.6f); 
     }
 
     void DealAttack1Damage()
@@ -196,12 +196,12 @@ public class BossController : MonoBehaviour
     {
         if (minionPrefab != null && summonPoints.Length > 0)
         {
-            animator.SetTrigger("IsSummon"); // Trigger a summon animation
+            animator.SetTrigger("IsSummon"); 
             rb.velocity = Vector2.zero;
             animator.SetBool("IsRun", false);
-            isAttacking = true; // Prevent other actions during summon
+            isAttacking = true; 
 
-            Invoke("ActuallySummonMinion", 0.8f); // Delay the actual summoning to match animation
+            Invoke("ActuallySummonMinion", 0.8f); 
             nextSummonTime = Time.time + summonCooldown;
         }
         else
