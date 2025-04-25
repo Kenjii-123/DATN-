@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -41,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
     private GameObject currentArmorEffect;
     public GameObject pickupNotificationPrefab;
     private Transform notificationParent;
+    public float dashItemRespawnDelay = 5f;
+    public float giantItemRespawnDelay = 5f;
+    private Hashtable respawningItems = new Hashtable();
 
     void Start()
     {
@@ -158,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         {
             canDoubleJump = true;
         }
-        if (other.CompareTag("DashItem") && !isDashing)
+        if (other.CompareTag("DashItem") && !isDashing && !respawningItems.ContainsKey(other.gameObject))
         {
             canDash = true;
             isDashing = true;
@@ -169,15 +174,28 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(speedBoostEffectPrefab, speedBoostEffectSpawnPoint.position, speedBoostEffectPrefab.transform.rotation, speedBoostEffectSpawnPoint);
             }
             ShowNotification("Đã nhặt được tăng tốc, tốc độ của bạn tăng lên gấp đôi trong 5s.");
-            Destroy(other.gameObject);
+            GameObject collectedItem = other.gameObject;
+            collectedItem.SetActive(false);
+            respawningItems.Add(collectedItem, true);
+            StartCoroutine(RespawnItem(collectedItem, dashItemRespawnDelay));
         }
 
-        if (other.CompareTag("GiantItem"))
+        if (other.CompareTag("GiantItem") && !respawningItems.ContainsKey(other.gameObject))
         {
-            Destroy(other.gameObject);
+            GameObject collectedItem = other.gameObject;
+            collectedItem.SetActive(false);
             hasGiantItem = true;
             ShowNotification("Đã nhặt được GiantItem, bấm G để miễn nhiễm sát thương từ quái vật trong 10s.");
+            respawningItems.Add(collectedItem, true);
+            StartCoroutine(RespawnItem(collectedItem, giantItemRespawnDelay));
         }
+    }
+
+    IEnumerator RespawnItem(GameObject itemToRespawn, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        itemToRespawn.SetActive(true);
+        respawningItems.Remove(itemToRespawn);
     }
 
     void ShowNotification(string message)
