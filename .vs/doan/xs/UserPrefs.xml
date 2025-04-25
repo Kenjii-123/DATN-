@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SlimeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BackgroundMusicController.cs">
     <Files>
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyFlyingAI.cs" />
       <File FileName="Assets/Scripts/Enemy2Controller.cs" />
       <File FileName="Assets/Scripts/Enemy2Health.cs" />
       <File FileName="Assets/Scripts/PlayerSkills.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="248" Column="26" />
-      <File FileName="Assets/Scripts/PlayerHealth.cs" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="406" Column="2" />
+      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="54" Column="70" />
       <File FileName="Assets/Scripts/Trapp.cs" />
       <File FileName="Assets/Scripts/Bullet.cs" Line="51" Column="24" />
       <File FileName="Assets/Scripts/SceneLoader.cs" />
       <File FileName="Assets/Scripts/GameManager.cs" />
       <File FileName="Assets/Scripts/LevelSelectorButton.cs" />
-      <File FileName="Assets/Scripts/Chest.cs" />
-      <File FileName="Assets/Scripts/QuestionPanel.cs" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="267" Column="2" />
+      <File FileName="Assets/Scripts/QuestionPanel.cs" Line="17" Column="6" />
       <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
       <File FileName="Assets/Scripts/PlayerScore.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BossController.cs" Line="76" Column="18" />
@@ -25,15 +25,15 @@
       <File FileName="Assets/Scripts/CeilingTrap.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SlimeHealth.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SlimeController.cs" Line="147" Column="33" />
+      <File FileName="Assets/BackgroundMusicController.cs" Line="52" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="SlimeController.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="BackgroundMusicController.cs" selected="True" />
             </Node>
           </Node>
         </State>

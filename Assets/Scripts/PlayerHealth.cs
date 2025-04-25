@@ -44,12 +44,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if (playerMovement != null && playerMovement.isGiantArmorActive)
         {
+            playerMovement.playerAudioSource.PlayOneShot(playerMovement.takeDamageSound);
             return;
         }
         else
         {
             currentHealth -= damage;
             UpdateHealthUI();
+            if (playerMovement != null && playerMovement.takeDamageSound != null)
+            {
+                playerMovement.playerAudioSource.PlayOneShot(playerMovement.takeDamageSound);
+            }
 
             if (animator != null)
             {
@@ -85,6 +90,10 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
+        if (playerMovement != null && playerMovement.dieSound != null)
+        {
+            playerMovement.playerAudioSource.PlayOneShot(playerMovement.dieSound);
+        }
 
         if (explosionPrefab != null)
         {
@@ -100,6 +109,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         gameObject.SetActive(true);
         UpdateHealthUI();
+        if (playerMovement != null && playerMovement.reviveSound != null)
+        {
+            playerMovement.playerAudioSource.PlayOneShot(playerMovement.reviveSound);
+        }
     }
 
     public void SetSpawnPoint(Vector2 newSpawnPoint)

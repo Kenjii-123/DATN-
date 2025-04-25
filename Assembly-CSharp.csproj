@@ -89,6 +89,7 @@
     <Compile Include="Assets/Scripts/FallTrap.cs" />
     <Compile Include="Assets/Scripts/LightningStrike.cs" />
     <Compile Include="Assets/Scripts/BossHealth.cs" />
+    <Compile Include="Assets/BackgroundMusicController.cs" />
     <Compile Include="Assets/Scripts/SlimeController.cs" />
     <Compile Include="Assets/Scripts/SlimeHealth.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />

@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -42,10 +41,23 @@ public class PlayerMovement : MonoBehaviour
     public Transform giantArmorEffectSpawnPoint;
     private GameObject currentArmorEffect;
     public GameObject pickupNotificationPrefab;
-    private Transform notificationParent;
+    public Transform notificationParent;
     public float dashItemRespawnDelay = 5f;
     public float giantItemRespawnDelay = 5f;
     private Hashtable respawningItems = new Hashtable();
+    public AudioSource playerAudioSource;
+    public AudioClip runSound;
+    public AudioClip jumpSound;
+    public AudioClip landSound;
+    public AudioClip attackSound;
+    public AudioClip shootSound;
+    public AudioClip pickupItemSound;
+    public AudioClip useItemSound;
+    private bool isRunningSoundPlaying = false;
+    private bool isJumpingState = false;
+    public AudioClip takeDamageSound;
+    public AudioClip dieSound;
+    public AudioClip reviveSound;
 
     void Start()
     {
@@ -54,6 +66,10 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalMoveSpeed = moveSpeed;
         FindNotificationParent();
+        if (playerAudioSource == null)
+        {
+            playerAudioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -106,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
+            playerAudioSource.PlayOneShot(jumpSound);
         }
         else if (!isGrounded && canDoubleJump && Input.GetButtonDown("Jump"))
         {
@@ -143,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
             ActivateGiantArmor();
             hasGiantItem = false;
             Debug.Log("Đã kích hoạt Giáp Khổng Lồ!");
+            playerAudioSource.PlayOneShot(useItemSound);
         }
 
         if (isGiantArmorActive)
@@ -151,6 +169,38 @@ public class PlayerMovement : MonoBehaviour
             if (giantArmorTimer <= 0f)
             {
                 DeactivateGiantArmor();
+            }
+        }
+
+        bool isCurrentlyJumping = !isGrounded;
+        if (isCurrentlyJumping && !isJumpingState)
+        {
+            isJumpingState = true;
+        }
+        else if (!isCurrentlyJumping && isJumpingState)
+        {
+            isJumpingState = false;
+            playerAudioSource.PlayOneShot(landSound);
+        }
+
+        bool isRunning = Mathf.Abs(rb.velocity.x) > 0.1f;
+        if (isRunning && isGrounded)
+        {
+            if (!isRunningSoundPlaying && runSound != null && playerAudioSource != null)
+            {
+                playerAudioSource.clip = runSound;
+                playerAudioSource.loop = true;
+                playerAudioSource.Play();
+                isRunningSoundPlaying = true;
+            }
+        }
+        else
+        {
+            if (isRunningSoundPlaying && playerAudioSource != null)
+            {
+                playerAudioSource.Stop();
+                playerAudioSource.loop = false;
+                isRunningSoundPlaying = false;
             }
         }
 
@@ -178,6 +228,7 @@ public class PlayerMovement : MonoBehaviour
             collectedItem.SetActive(false);
             respawningItems.Add(collectedItem, true);
             StartCoroutine(RespawnItem(collectedItem, dashItemRespawnDelay));
+            playerAudioSource.PlayOneShot(pickupItemSound);
         }
 
         if (other.CompareTag("GiantItem") && !respawningItems.ContainsKey(other.gameObject))
@@ -188,6 +239,7 @@ public class PlayerMovement : MonoBehaviour
             ShowNotification("Đã nhặt được GiantItem, bấm G để miễn nhiễm sát thương từ quái vật trong 10s.");
             respawningItems.Add(collectedItem, true);
             StartCoroutine(RespawnItem(collectedItem, giantItemRespawnDelay));
+            playerAudioSource.PlayOneShot(pickupItemSound);
         }
     }
 
@@ -235,6 +287,7 @@ public class PlayerMovement : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("attackTrigger");
+        playerAudioSource.PlayOneShot(attackSound);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         foreach (Collider2D enemyCollider in hitEnemies)
         {
@@ -293,6 +346,7 @@ public class PlayerMovement : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("shootTrigger");
+            playerAudioSource.PlayOneShot(shootSound);
         }
         else
         {
