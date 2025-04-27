@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public Transform spawnPointMap3;
     public GameObject pauseMenuUI;
     public GameObject levelCompleteUI;
-    public GameObject player;
+    public GameObject player; 
     private static int currentLevel = 1;
     public int nextLevelToLoad;
     private static int selectedLevel = 1;

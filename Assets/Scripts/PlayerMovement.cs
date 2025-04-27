@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip takeDamageSound;
     public AudioClip dieSound;
     public AudioClip reviveSound;
-
+    public AudioClip doublejumpSound;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetTrigger("doubleJumpTrigger");
+            playerAudioSource.PlayOneShot(doublejumpSound);
             canDoubleJump = false;
             if (doubleJumpSmokePrefab != null && smokeSpawnPoint != null)
             {
