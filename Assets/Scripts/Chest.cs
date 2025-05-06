@@ -24,6 +24,8 @@ public class Chest : MonoBehaviour
     public string nextSceneName;
     public GameObject interactionUIPrefab;
     public Transform notificationParent;
+    public GameObject incorrectAnswerPanelPrefab;
+    public Transform incorrectAnswerPanelParent;
 
     private bool playerInRange = false;
     private Animator animator;
@@ -35,6 +37,11 @@ public class Chest : MonoBehaviour
     public int currentQuestionIndex = 0;
     private GameManager gameManager;
     private GameObject currentInteractionUIInstance;
+    private List<Question> incorrectlyAnsweredQuestions = new List<Question>();
+    private GameObject currentIncorrectAnswerPanelInstance;
+    private int incorrectQuestionIndex = 0;
+    private bool showingIncorrectAnswers = false;
+    private bool finishedShowingIncorrectAnswers = false;
 
     private string levelName;
 
@@ -62,6 +69,11 @@ public class Chest : MonoBehaviour
         }
 
         FindNotificationParent();
+        if (incorrectAnswerPanelParent == null)
+        {
+            incorrectAnswerPanelParent = notificationParent;
+            Debug.LogWarning("Incorrect Answer Panel Parent không được gán, sử dụng Notification Parent làm mặc định.");
+        }
     }
 
     void FindNotificationParent()
@@ -142,6 +154,7 @@ public class Chest : MonoBehaviour
     {
         correctAnswers = 0;
         currentQuestionIndex = 0;
+        incorrectlyAnsweredQuestions.Clear();
         chestOpened = true;
         animator.SetTrigger("IsOpen");
         Invoke("ShowQuestionPanel", questionPanelShowDelay);
@@ -149,7 +162,7 @@ public class Chest : MonoBehaviour
 
     void ShowQuestionPanel()
     {
-        if (questionPanelPrefab != null && questionPanelParent != null && currentQuestionsToAsk.Count > 0 && currentQuestionIndex < currentQuestionsToAsk.Count)
+        if (questionPanelPrefab != null && questionPanelParent != null && currentQuestionsToAsk.Count > 0 && currentQuestionIndex < currentQuestionsToAsk.Count && !showingIncorrectAnswers)
         {
             currentQuestion = currentQuestionsToAsk[currentQuestionIndex];
             currentQuestionPanelInstance = Instantiate(questionPanelPrefab, questionPanelParent);
@@ -163,10 +176,10 @@ public class Chest : MonoBehaviour
                 Debug.LogError("QuestionPanelUI script không được tìm thấy trên prefab bảng câu hỏi.");
             }
         }
-        else
+        else if (!showingIncorrectAnswers)
         {
-            Debug.LogError("Question Panel Prefab hoặc Parent chưa được gán, hoặc không có câu hỏi nào để hiển thị.");
-            HandleChestCompletion();
+            Debug.Log("Đã trả lời hết số câu hỏi yêu cầu từ chest này. Hiển thị các câu trả lời sai.");
+            ShowIncorrectAnswerSequence();
         }
     }
 
@@ -178,46 +191,116 @@ public class Chest : MonoBehaviour
             currentQuestionPanelInstance = null;
         }
 
-        if (isCorrect)
+        if (!showingIncorrectAnswers)
         {
-            correctAnswers++;
-            SaveProgress();
-            Debug.Log("Correct answers: " + correctAnswers + "/" + currentQuestionsToAsk.Count);
+            if (isCorrect)
+            {
+                correctAnswers++;
+                SaveProgress();
+                Debug.Log("Correct answers: " + correctAnswers + "/" + currentQuestionsToAsk.Count);
+            }
+            else
+            {
+                Debug.Log("Incorrect answer. Correct answers: " + correctAnswers + "/" + currentQuestionsToAsk.Count);
+                incorrectlyAnsweredQuestions.Add(currentQuestion);
+            }
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentQuestionsToAsk.Count)
+            {
+                Invoke("ShowQuestionPanel", questionPanelShowDelay);
+            }
+            else
+            {
+                Debug.Log("Đã trả lời hết số câu hỏi yêu cầu từ chest này. Hiển thị các câu trả lời sai.");
+                ShowIncorrectAnswerSequence();
+            }
+        }
+    }
+
+    void ShowIncorrectAnswerSequence()
+    {
+        showingIncorrectAnswers = true;
+        incorrectQuestionIndex = 0;
+        if (incorrectlyAnsweredQuestions.Count > 0)
+        {
+            ShowIncorrectAnswerPanel(incorrectlyAnsweredQuestions[incorrectQuestionIndex]);
         }
         else
         {
-            Debug.Log("Incorrect answer. Correct answers: " + correctAnswers + "/" + currentQuestionsToAsk.Count);
+            Debug.Log("Không có câu trả lời sai nào.");
+            finishedShowingIncorrectAnswers = true;
+            HandleChestCompletion();
+        }
+    }
+
+    void ShowIncorrectAnswerPanel(Question incorrectQuestion)
+    {
+        if (incorrectAnswerPanelPrefab != null && incorrectAnswerPanelParent != null)
+        {
+            currentIncorrectAnswerPanelInstance = Instantiate(incorrectAnswerPanelPrefab, incorrectAnswerPanelParent);
+            IncorrectAnswerPanelUI incorrectPanelUI = currentIncorrectAnswerPanelInstance.GetComponent<IncorrectAnswerPanelUI>();
+            if (incorrectPanelUI != null)
+            {
+                incorrectPanelUI.SetIncorrectAnswer(incorrectQuestion, incorrectQuestion.answers[incorrectQuestion.correctAnswerIndex], this);
+            }
+            else
+            {
+                Debug.LogError("IncorrectAnswerPanelUI script không được tìm thấy trên prefab bảng câu trả lời sai.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Incorrect Answer Panel Prefab hoặc Parent chưa được gán.");
+            ContinueAfterIncorrectAnswer();
+        }
+    }
+
+    public void ContinueAfterIncorrectAnswer()
+    {
+        if (currentIncorrectAnswerPanelInstance != null)
+        {
+            Destroy(currentIncorrectAnswerPanelInstance);
+            currentIncorrectAnswerPanelInstance = null;
         }
 
-        currentQuestionIndex++;
-        if (currentQuestionIndex < currentQuestionsToAsk.Count)
+        incorrectQuestionIndex++;
+        if (incorrectQuestionIndex < incorrectlyAnsweredQuestions.Count)
         {
-            Invoke("ShowQuestionPanel", questionPanelShowDelay);
+            ShowIncorrectAnswerPanel(incorrectlyAnsweredQuestions[incorrectQuestionIndex]);
         }
         else
         {
-            Debug.Log("Đã trả lời hết số câu hỏi yêu cầu từ chest này.");
+            Debug.Log("Đã xem hết các câu trả lời sai.");
+            finishedShowingIncorrectAnswers = true;
             HandleChestCompletion();
         }
     }
 
     void HandleChestCompletion()
     {
-        if (!string.IsNullOrEmpty(nextSceneName) && gameManager != null)
+        if (finishedShowingIncorrectAnswers)
         {
-            if (int.TryParse(nextSceneName, out int nextLevel))
+            if (!string.IsNullOrEmpty(nextSceneName) && gameManager != null)
             {
-                gameManager.ShowLevelCompleteUI(nextLevel);
+                if (int.TryParse(nextSceneName, out int nextLevel))
+                {
+                    gameManager.ShowLevelCompleteUI(nextLevel);
+                }
+                else
+                {
+                    Debug.LogError("nextSceneName không phải là số hợp lệ.");
+                    gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
+                }
             }
-            else
+            else if (gameManager != null)
             {
-                Debug.LogError("nextSceneName không phải là số hợp lệ.");
                 gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
             }
         }
-        else if (gameManager != null)
+        else
         {
-            gameManager.ShowLevelCompleteUI(GameManager.instance.nextLevelToLoad + 1);
+            Debug.Log($"Chưa xem hết câu sai: finishedShowingIncorrectAnswers = {finishedShowingIncorrectAnswers}");
         }
     }
 
