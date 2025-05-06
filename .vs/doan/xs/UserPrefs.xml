@@ -1,35 +1,26 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Chest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BackgroundMusicController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy2Health.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerSkills.cs" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" />
-      <File FileName="Assets/Scripts/PlayerHealth.cs" />
-      <File FileName="Assets/Scripts/Trapp.cs" />
-      <File FileName="Assets/Scripts/Bullet.cs" />
-      <File FileName="Assets/Scripts/SceneLoader.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="17" Column="31" />
-      <File FileName="Assets/Scripts/LevelSelectorButton.cs" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="193" Column="63" />
-      <File FileName="Assets/Scripts/QuestionPanel.cs" />
-      <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
-      <File FileName="Assets/Scripts/PlayerScore.cs" />
-      <File FileName="Assets/Scripts/BossController.cs" />
-      <File FileName="Assets/Scripts/BossHealth.cs" />
-      <File FileName="Assets/Scripts/CheckPoint.cs" />
-      <File FileName="Assets/Scripts/CeilingTrap.cs" />
-      <File FileName="Assets/Scripts/SlimeHealth.cs" />
-      <File FileName="Assets/Scripts/SlimeController.cs" />
-      <File FileName="Assets/BackgroundMusicController.cs" />
+      <File FileName="Assets/Scripts/LevelSelectorButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="180" Column="1" />
+      <File FileName="Assets/Scripts/QuestionPanel.cs" Line="66" Column="1" />
+      <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
+      <File FileName="Assets/BackgroundMusicController.cs" Line="27" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
+            <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True" />
+              <Node name="BackgroundMusicController.cs" selected="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -38,7 +29,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0fa4248b-c978-4af7-96af-2294af6f73ad" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/tronghung/doan/Assets/Scripts/Chest.cs" relfile="Assets/Scripts/Chest.cs" line="256" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
