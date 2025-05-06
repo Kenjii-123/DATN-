@@ -22,7 +22,7 @@ public class IncorrectAnswerPanelUI : MonoBehaviour
 
         if (correctAnswerText != null)
         {
-            correctAnswerText.text = "Câu trả lời đúng là: " + correctAnswer;
+            correctAnswerText.text =  correctAnswer;
         }
         else
         {

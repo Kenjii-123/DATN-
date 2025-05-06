@@ -14,7 +14,6 @@ public class VerticalLazeTrap : MonoBehaviour
         lazeCollider = GetComponent<BoxCollider2D>();
         StartCoroutine(LazeCycle());
     }
-
     IEnumerator LazeCycle()
     {
         while (true)

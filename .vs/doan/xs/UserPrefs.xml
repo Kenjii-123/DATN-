@@ -1,20 +1,25 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/IncorrectAnswerPanelUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/LevelSelectorButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="180" Column="1" />
+      <File FileName="Assets/Scripts/Chest.cs" Line="350" Column="2" />
       <File FileName="Assets/Scripts/QuestionPanel.cs" Line="66" Column="1" />
       <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
       <File FileName="Assets/BackgroundMusicController.cs" Line="27" Column="1" />
-      <File FileName="Assets/IncorrectAnswerPanelUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/IncorrectAnswerPanelUI.cs" Line="31" Column="1" />
+      <File FileName="Assets/Scripts/LightningStrike.cs" Line="7" Column="36" />
+      <File FileName="Assets/Scripts/VerticalLazeTrap.cs" Line="16" Column="6" />
+      <File FileName="Assets/Scripts/GolemController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="22" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="IncorrectAnswerPanelUI.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="GameManager.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -30,9 +35,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0fa4248b-c978-4af7-96af-2294af6f73ad" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/tronghung/doan/Assets/Scripts/Chest.cs" relfile="Assets/Scripts/Chest.cs" line="256" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
