@@ -1,39 +1,31 @@
 ﻿<Properties StartupConfiguration="{D6D677AA-B9E7-0A48-822C-3926248BB413}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/IncorrectAnswerPanelUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/LevelSelectorButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Chest.cs" Line="350" Column="2" />
-      <File FileName="Assets/Scripts/QuestionPanel.cs" Line="66" Column="1" />
-      <File FileName="Assets/Scripts/Dabay.cs" Line="1" Column="1" />
-      <File FileName="Assets/BackgroundMusicController.cs" Line="27" Column="1" />
-      <File FileName="Assets/IncorrectAnswerPanelUI.cs" Line="31" Column="1" />
-      <File FileName="Assets/Scripts/LightningStrike.cs" Line="7" Column="36" />
-      <File FileName="Assets/Scripts/VerticalLazeTrap.cs" Line="16" Column="6" />
-      <File FileName="Assets/Scripts/GolemController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chest.cs" />
+      <File FileName="Assets/Scripts/QuestionPanel.cs" />
+      <File FileName="Assets/Scripts/Dabay.cs" />
+      <File FileName="Assets/BackgroundMusicController.cs" />
+      <File FileName="Assets/Scripts/LightningStrike.cs" />
+      <File FileName="Assets/Scripts/VerticalLazeTrap.cs" />
+      <File FileName="Assets/Scripts/GolemController.cs" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="19" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="doan" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="IncorrectAnswerPanelUI.cs" selected="True" />
-              </Node>
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Unity" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0fa4248b-c978-4af7-96af-2294af6f73ad" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="82e70f69-3e3a-4768-b4a7-d44efa55b4dc" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
