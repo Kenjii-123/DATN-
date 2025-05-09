@@ -218499,6 +218499,219 @@ Transform:
   m_Father: {fileID: 85781654}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &882430203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: notificationParent
+      value: 
+      objectReference: {fileID: 1331217292}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questionPanelParent
+      value: 
+      objectReference: {fileID: 1331217292}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: incorrectAnswerPanelParent
+      value: 
+      objectReference: {fileID: 1331217292}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[0].questionText
+      value: "L\xE1 c\u1EDD \u0111\u1ECF sao v\xE0ng l\u1EA7n \u0111\u1EA7u xu\u1EA5t
+        hi\u1EC7n trong cu\u1ED9c kh\u1EDFi ngh\u0129a n\xE0o?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[1].questionText
+      value: "\u0110\u1ED1 ai tr\xEAn B\u1EA1ch \u0110\u1EB1ng Giang, L\xE0m cho
+        c\u1ECDc nh\u1ECDn, d\u1ECDc ngang s\xE1ng ng\u1EDDi Ph\xE1 qu\xE2n Nam H\xE1n
+        t\u01A1i b\u1EDDi, G\u01B0\u01A1m th\u1EA7n \u0111\u1ED9c l\u1EADp gi\u1EEFa
+        tr\u1EDDi vung l\xEAn. - L\xE0 ai?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[2].questionText
+      value: "B\u1EADc anh h\xF9ng t\xE0i kh\xF4ng \u0111\u1EE3i tu\u1ED5i, S\u1EA5u
+        ch\u1EEF c\u1EDD giong ru\u1ED5i kh\u1EAFp n\u01A1i, \u0110\xE1nh cho qu\xE2n
+        gi\u1EB7c t\u01A1i b\u1EDDi, Ch\u01B0\u01A1ng D\u01B0\u01A1ng, H\xE0m T\u1EED
+        r\u1EA1ng ng\u1EDDi chi\u1EBFn c\xF4ng. - L\xE0 ai?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].questionText
+      value: "Th\xF9 ch\u1ED3ng n\u1EE3 n\u01B0\u1EDBc h\u1ECFi ai, \u0110u\xF4i
+        qu\xE2n tham b\u1EA1o, di\u1EC7t lo\xE0i x\xE2m l\u0103ng M\xEA Linh n\u1ED5i
+        s\xF3ng \u0111\u1EA5t b\u1EB1ng, H\xE1t giang ghi d\u1EA5u h\u01A1n c\u0103m
+        \u0111\u1EBFn gi\u1EDD. - L\xE0 ai?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].questionText
+      value: "T\u1EEBng khen kh\xF3c l\xF3c theo cha R\u1ED3i \u0111em n\u1EE3 n\u01B0\u1EDBc,
+        t\xECnh nh\xE0 ra c\xE2n. N\xFAi Lam t\xECm gi\xFAp minh qu\xE2n B\xECnh
+        Ng\xF4 \u0111\u1EA1i c\xE1o, b\xFAt th\u1EA7n ra tay. - L\xE0 ai?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[0].correctAnswerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[2].correctAnswerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].correctAnswerIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].correctAnswerIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[0].answers.Array.data[0]
+      value: "Kh\u1EDFi Ngh\u0129a Nam K\u1EF3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[0].answers.Array.data[1]
+      value: "Kh\u1EDFi Ngh\u0129a  B\u1EAFc S\u01A1n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[0].answers.Array.data[2]
+      value: "Kh\u1EDFi Ngh\u0129a \u0110\xF4 L\u01B0\u01A1ng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[0].answers.Array.data[3]
+      value: "Kh\u1EDFi Ngh\u0129a Bai T\u01A1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[1].answers.Array.data[0]
+      value: "Nguy\u1EC5n Tr\xE3i"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[1].answers.Array.data[1]
+      value: "Ng\xF4 Quy\u1EC1n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[1].answers.Array.data[2]
+      value: "An Ti\xEAm"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[1].answers.Array.data[3]
+      value: "\u0110\u1ED9i C\u1EA5n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[2].answers.Array.data[0]
+      value: "Tr\u1EA7n Qu\u1ED1c To\u1EA3n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[2].answers.Array.data[1]
+      value: "L\xEA Lai"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[2].answers.Array.data[2]
+      value: "\u0110inh B\u1ED9 L\u0129nh"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[2].answers.Array.data[3]
+      value: Quang Trung
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].answers.Array.data[0]
+      value: "L\xFD Th\u01B0\u1EDDng Ki\u1EC7t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].answers.Array.data[1]
+      value: "Nguy\u1EC5n Hu\u1EC7"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].answers.Array.data[2]
+      value: "Hai B\xE0 Tr\u01B0ng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[3].answers.Array.data[3]
+      value: "M\u1EA1c \u0110\u0129nh Chi"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].answers.Array.data[0]
+      value: "L\xFD Th\u01B0\u1EDDng Ki\u1EC7t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].answers.Array.data[1]
+      value: "Mai H\u1EAFc \u0110\u1EBF"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].answers.Array.data[2]
+      value: "Hai B\xE0 Tr\u01B0ng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questions.Array.data[4].answers.Array.data[3]
+      value: "Nguy\u1EC5n Tr\xE3i"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 393.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 47.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0089365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862256656579086658, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_Name
+      value: Chest 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
 --- !u!1 &882897469
 GameObject:
   m_ObjectHideFlags: 0
@@ -403185,21 +403398,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &9827276091242018
+--- !u!4 &9827276091242018 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+  m_PrefabInstance: {fileID: 3726430047895784503}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031616918670716425}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.484024, y: -55.94358, z: -1.0089365}
-  m_LocalScale: {x: 20, y: 20, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 715632329740219998}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &11830709996634630
 Transform:
   m_ObjectHideFlags: 0
@@ -413110,58 +413313,6 @@ Transform:
   m_Father: {fileID: 185094240978429419}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2662363634818459687
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031616918670716425}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1252520387
-  m_SortingLayer: 8
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -1521708308, guid: 96986b93e4868469aa5b414b6ce6700b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.29, y: 0.21}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!61 &2681869178719436854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -414840,26 +414991,6 @@ GameObject:
   - component: {fileID: 766667916384445846}
   m_Layer: 0
   m_Name: Cave - Floor_10 (14)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &3031616918670716425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9827276091242018}
-  - component: {fileID: 2662363634818459687}
-  - component: {fileID: 3733106591722728903}
-  - component: {fileID: 5654443957261392905}
-  - component: {fileID: 7637346779374868297}
-  m_Layer: 6
-  m_Name: 'Chest '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418022,27 +418153,79 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.039999, y: 15.079999}
   m_EdgeRadius: 0
---- !u!95 &3733106591722728903
-Animator:
-  serializedVersion: 5
+--- !u!1001 &3726430047895784503
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031616918670716425}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df059c91fbb6945a58a12591fc8b4ecc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 715632329740219998}
+    m_Modifications:
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: notificationParent
+      value: 
+      objectReference: {fileID: 1331217292}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: questionPanelParent
+      value: 
+      objectReference: {fileID: 1331217292}
+    - target: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: incorrectAnswerPanelParent
+      value: 
+      objectReference: {fileID: 1331217292}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 53.484024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -55.94358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0089365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923356246513648802, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862256656579086658, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+      propertyPath: m_Name
+      value: 'Chest '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
 --- !u!4 &3740365405466203493
 Transform:
   m_ObjectHideFlags: 0
@@ -425046,51 +425229,6 @@ Transform:
   m_Father: {fileID: 6548829806600836175}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5654443957261392905
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031616918670716425}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.29, y: 0.21}
-    newSize: {x: 0.29, y: 0.21}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.21}
-  m_EdgeRadius: 0
 --- !u!212 &5655598942757405221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -433104,60 +433242,17 @@ Transform:
   m_Father: {fileID: 6548829806600836175}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7637346779374868297
+--- !u!114 &7637346779374868297 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 710920624324249502, guid: 6888ce8ee95b142759ae9224e2dfcfb3, type: 3}
+  m_PrefabInstance: {fileID: 3726430047895784503}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031616918670716425}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c31a71e19f214841b21f3258eb32fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionPanelPrefab: {fileID: 4932384610095576166, guid: cec51bf7528894feba7d2c4ef6b0332c, type: 3}
-  questionPanelParent: {fileID: 1331217292}
-  questions:
-  - questionText: "V\u1ECB t\u1ED5ng th\u1ED1ng cu\u1ED1i c\xF9ng c\u1EE7a ch\xEDnh
-      quy\u1EC1n M\u0129 \u2013 Ng\u1EE5y, \u0111\xE3 \u0111\u1EA7u h\xE0ng v\xF4
-      \u0111i\u1EC1u ki\u1EC7n khi qu\xE2n ta ti\u1EBFn v\xE0o Dinh \u0110\u1ED9c
-      L\u1EADp?"
-    answers:
-    - "Ng\xF4 \u0110\xECnh Di\u1EC7m"
-    - "Nguy\u1EC5n V\u0103n Thi\u1EC7u  "
-    - "D\u01B0\u01A1ng V\u0103n Minh"
-    - "Tr\u1EA7n V\u0103n H\u01B0\u01A1ng  "
-    correctAnswerIndex: 2
-  - questionText: "C\xF3 m\u1ED9t th\xE0nh ph\u1ED1 \u0111\u01B0\u1EE3c gi\u1EA3i
-      ph\xF3ng v\xE0o ng\xE0y 26/3/1975 tr\xF9ng v\u1EDBi ng\xE0y th\xE0nh l\u1EADp
-      \u0110o\xE0n TNCS H\u1ED3 Ch\xED Minh. B\u1EA1n h\xE3y cho bi\u1EBFt \u0111\xF3
-      l\xE0 th\xE0nh ph\u1ED1 n\xE0o?"
-    answers:
-    - "\u0110\xE0 N\u1EB5ng"
-    - "Hu\u1EBF"
-    - "\u0110\u1EAFk L\u1EAFk"
-    - "Bu\xF4n M\xEA Thu\u1ED9t"
-    correctAnswerIndex: 1
-  - questionText: "B\u1EA1n h\xE3y cho bi\u1EBFt chi\u1EBFc xe t\u0103ng d\u1EABn
-      \u0111\u1EA7u \u0111\xE1nh chi\u1EBFm Dinh \u0111\u1ED9c l\u1EADp mang s\u1ED1
-      bao nhi\xEAu?"
-    answers:
-    - 390
-    - 429
-    - 205
-    - 309
-    correctAnswerIndex: 0
-  questionsToAnswer: 3
-  questionPanelShowDelay: 0
-  gemsNeededToOpen: 4
-  nextSceneName: 2
-  interactionUIPrefab: {fileID: 7942773627231755515, guid: 2a219327c1ef742969b2e7c8fa5f8521, type: 3}
-  notificationParent: {fileID: 1331217292}
-  incorrectAnswerPanelPrefab: {fileID: 7850124366602880294, guid: da7dbd86185f0458fbd84c159bee4d4e, type: 3}
-  incorrectAnswerPanelParent: {fileID: 1331217292}
-  correctAnswers: 0
-  currentQuestionIndex: 0
 --- !u!1 &7646150034080507716
 GameObject:
   m_ObjectHideFlags: 0
