@@ -17,7 +17,7 @@ public class GolemController : MonoBehaviour
     public float healthThresholdForSplit = 0.5f;
     public GameObject golemClonePrefab;
     public Transform[] cloneSpawnPoints;
-    public float splitDelay = 0.8f; // Thời gian chờ trước khi thực sự phân thân
+    public float splitDelay = 0.8f;
     private bool isSplitting = false;
 
     [Header("Kiểm tra mặt đất")]
@@ -112,8 +112,8 @@ public class GolemController : MonoBehaviour
         lastAttackTime = Time.time;
         animator.SetTrigger("IsGattack");
         rb.velocity = Vector2.zero;
-        // Gây sát thương thông qua Animation Event hoặc Invoke
-        Invoke("DealDamage", 0.5f); // Ví dụ gọi sau 0.5s animation
+    
+        Invoke("DealDamage", 0.5f); 
     }
 
     void DealDamage()
